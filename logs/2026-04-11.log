@@ -1,0 +1,1324 @@
+[2026-04-11 06:31:39] [INFO] [INPUT] {
+    "customer_name": "Maria Da Conceicao Pereira Filho",
+    "phone": "(12) 3123-1231",
+    "email": "nicolefdeoliveira@outlook.com",
+    "zipcode": "89235-025",
+    "address": "Rua Chico Mendes",
+    "number": "11",
+    "neighborhood": "Boehmerwald",
+    "city": "Joinville",
+    "state": "SC",
+    "cpf": "04379915980",
+    "utm_source": null,
+    "utm_medium": null,
+    "utm_campaign": null,
+    "utm_content": null,
+    "utm_term": null,
+    "src": null,
+    "sck": null,
+    "items": [
+        {
+            "id": 1,
+            "product_id": 78,
+            "name": "BOTIJÃO 13KG COPAGAZ + ÁGUA 20L",
+            "image": "\/uploads\/products\/product_1772451899_69a5783b1eaff.webp",
+            "unit_price": 91.9,
+            "quantity": 1,
+            "observations": "",
+            "complements": []
+        },
+        {
+            "id": 2,
+            "product_id": 73,
+            "name": "Suporte para Botijão com Rodinhas Reforçadas",
+            "image": "\/uploads\/products\/product_1772451377_69a57631e2164.webp",
+            "unit_price": 27.9,
+            "quantity": 1,
+            "observations": "",
+            "complements": []
+        },
+        {
+            "id": 3,
+            "product_id": 74,
+            "name": "Carvão Vegetal Para Churrasco 2,5kg",
+            "image": "\/uploads\/products\/product_1772451422_69a5765ebf2b0.webp",
+            "unit_price": 17.9,
+            "quantity": 1,
+            "observations": "",
+            "complements": []
+        }
+    ],
+    "payment_method": "pix",
+    "freight_type": "slow",
+    "freight_value": 0,
+    "total_final": 137.70000000000002
+}
+[2026-04-11 06:31:39] [INFO] [GHOSTSPAY_REQUEST] {
+    "provider": "Checkout",
+    "client_name": "Maria Da Conceicao Pereira Filho",
+    "client_email": "nicolefdeoliveira@outlook.com",
+    "client_document": "04379915980",
+    "client_mobile_phone": "1231231231",
+    "external_ref": "ORD-69D9EACBD9084",
+    "post_back_url": "https:\/\/libera-rapiido.site\/api\/webhook-ghostspay.php",
+    "products": [
+        {
+            "product_name": "BOTIJÃO 13KG COPAGAZ + ÁGUA 20L",
+            "quantity": 1,
+            "value": 91.9
+        },
+        {
+            "product_name": "Suporte para Botijão com Rodinhas Reforçadas",
+            "quantity": 1,
+            "value": 27.9
+        },
+        {
+            "product_name": "Carvão Vegetal Para Churrasco 2,5kg",
+            "quantity": 1,
+            "value": 17.9
+        }
+    ]
+}
+[2026-04-11 06:31:42] [INFO] [WEBHOOK_RECEIVED] {"event":"transaction.pending","data":{"id":"109e8192-706c-4f8d-9b4d-fdbefc7abc9d","status":"pending","amount":137.70000000000002,"paymentMethod":"pix","paidAt":null,"external_ref":"ORD-69D9EACBD9084","adquirente":"CLICK PAGAMETOS DIGITAIS - MK IP","pix":{"code":"00020101021226800014br.gov.bcb.pix2558qrcode.mkip.com.br\/v1\/5646c07c-3101-41e0-8e7e-d9e18311e4ab5204000053039865802BR5910PAGSIMPLES6008SAOPAULO62070503***6304B71E","qr_code_url":"\/storage\/img\/public\/qrcodes-pix\/876b1be4-1a73-408f-a0d7-d06e57c8c214.png"},"customer":{"name":"Maria Da Conceicao Pereira Filho","email":"nicolefdeoliveira@outlook.com","phone":"1231231231","document":"04379915980"},"utm_source":null,"utm_medium":null,"utm_campaign":null,"utm_term":null},"timestamp":"2026-04-11T03:31:42-03:00"}
+[2026-04-11 06:31:42] [INFO] [WEBHOOK_EVENT] event=transaction.pending txn=109e8192-706c-4f8d-9b4d-fdbefc7abc9d status=pending
+[2026-04-11 06:31:42] [INFO] [WEBHOOK_SKIP] Evento ignorado: transaction.pending / status: pending
+[2026-04-11 06:31:42] [INFO] [GHOSTSPAY_RESPONSE] {
+    "http_code": 200,
+    "body": "{\"transaction_id\":\"109e8192-706c-4f8d-9b4d-fdbefc7abc9d\",\"payment_id\":631168,\"status\":\"PENDING\",\"total_value\":137.7,\"net_total\":134.55,\"pix\":{\"code\":\"00020101021226800014br.gov.bcb.pix2558qrcode.mkip.com.br\\\/v1\\\/5646c07c-3101-41e0-8e7e-d9e18311e4ab5204000053039865802BR5910PAGSIMPLES6008SAOPAULO62070503***6304B71E\",\"qr_code_url\":\"\\\/storage\\\/img\\\/public\\\/qrcodes-pix\\\/876b1be4-1a73-408f-a0d7-d06e57c8c214.png\",\"qr_code_image\":\"img\\\/public\\\/qrcodes-pix\\\/876b1be4-1a73-408f-a0d7-d06e57c8c214.png\",\"expiration_date\":\"2026-05-11 00:00:00\"},\"customer\":{\"name\":\"Maria Da Conceicao Pereira Filho\",\"email\":\"nicolefdeoliveira@outlook.com\",\"document\":\"04379915980\",\"phone\":\"1231231231\"},\"items\":[{\"product_id\":1088,\"product_name\":\"BOTIJ\\u00c3O 13KG COPAGAZ + \\u00c1GUA 20L\",\"offer_id\":1329,\"value\":91.9,\"quantity\":1,\"total\":91.9},{\"product_id\":1089,\"product_name\":\"Suporte para Botij\\u00e3o com Rodinhas Refor\\u00e7adas\",\"offer_id\":1330,\"value\":27.9,\"quantity\":1,\"total\":27.9},{\"product_id\":1090,\"product_name\":\"Carv\\u00e3o Vegetal Para Churrasco 2,5kg\",\"offer_id\":1331,\"value\":17.9,\"quantity\":1,\"total\":17.9}],\"gateway\":{\"name\":\"pluggou - minepay\",\"type\":\"INTERNAL\"},\"created_at\":\"2026-04-11 03:31:42\",\"external_ref\":\"ORD-69D9EACBD9084\"}",
+    "curl_error": ""
+}
+[2026-04-11 06:31:42] [INFO] [GHOSTSPAY_OK] Transação criada: 109e8192-706c-4f8d-9b4d-fdbefc7abc9d
+[2026-04-11 06:31:42] [INFO] [UTMIFY_PENDING_REQUEST] {
+    "orderId": "ORD-69D9EACBD9084",
+    "platform": "GhostsPay",
+    "paymentMethod": "pix",
+    "status": "waiting_payment",
+    "createdAt": "2026-04-11 06:31:39",
+    "approvedDate": null,
+    "refundedAt": null,
+    "customer": {
+        "name": "Maria Da Conceicao Pereira Filho",
+        "email": "nicolefdeoliveira@outlook.com",
+        "phone": "1231231231",
+        "document": "04379915980",
+        "country": "BR",
+        "ip": "185.153.176.45"
+    },
+    "products": [
+        {
+            "id": "PROD-1",
+            "name": "BOTIJÃO 13KG COPAGAZ + ÁGUA 20L",
+            "planId": null,
+            "planName": null,
+            "quantity": 1,
+            "priceInCents": 9190
+        },
+        {
+            "id": "PROD-2",
+            "name": "Suporte para Botijão com Rodinhas Reforçadas",
+            "planId": null,
+            "planName": null,
+            "quantity": 1,
+            "priceInCents": 2790
+        },
+        {
+            "id": "PROD-3",
+            "name": "Carvão Vegetal Para Churrasco 2,5kg",
+            "planId": null,
+            "planName": null,
+            "quantity": 1,
+            "priceInCents": 1790
+        }
+    ],
+    "trackingParameters": {
+        "src": null,
+        "sck": null,
+        "utm_source": null,
+        "utm_campaign": null,
+        "utm_medium": null,
+        "utm_content": null,
+        "utm_term": null
+    },
+    "commission": {
+        "totalPriceInCents": 13770,
+        "gatewayFeeInCents": 0,
+        "userCommissionInCents": 13770,
+        "currency": "BRL"
+    },
+    "isTest": false
+}
+[2026-04-11 06:31:42] [INFO] [UTMIFY_PENDING_RESPONSE] {
+    "http_code": 404,
+    "body": "{\"OK\":false,\"data\":{\"type\":\"API_CREDENTIAL\"},\"result\":\"ERROR\",\"statusCode\":404,\"message\":\"API_CREDENTIAL_NOT_FOUND\"}",
+    "curl_error": ""
+}
+[2026-04-11 06:31:42] [ERROR] [UTMIFY_FAIL] {
+    "OK": false,
+    "data": {
+        "type": "API_CREDENTIAL"
+    },
+    "result": "ERROR",
+    "statusCode": 404,
+    "message": "API_CREDENTIAL_NOT_FOUND"
+}
+[2026-04-11 06:31:42] [INFO] [ORDER_SAVED] Contexto salvo: /home/u149794825/domains/libera-rapiido.site/public_html/api/../logs/order_109e8192-706c-4f8d-9b4d-fdbefc7abc9d.json
+[2026-04-11 06:31:42] [INFO] [RESPONSE_OK] {
+    "success": true,
+    "order_number": "ORD-69D9EACBD9084",
+    "transaction_id": "109e8192-706c-4f8d-9b4d-fdbefc7abc9d",
+    "redirect_url": "\/pagar?order=ORD-69D9EACBD9084",
+    "pix": {
+        "qr_code": "00020101021226800014br.gov.bcb.pix2558qrcode.mkip.com.br\/v1\/5646c07c-3101-41e0-8e7e-d9e18311e4ab5204000053039865802BR5910PAGSIMPLES6008SAOPAULO62070503***6304B71E",
+        "qr_code_url": "https:\/\/api.ghostspaysv1.com\/storage\/img\/public\/qrcodes-pix\/876b1be4-1a73-408f-a0d7-d06e57c8c214.png",
+        "expires_at": "2026-05-11 00:00:00"
+    }
+}
+[2026-04-11 06:35:07] [INFO] [INPUT] {
+    "customer_name": "Sheila Pereira Filho Da Rosa",
+    "phone": "(12) 3123-1231",
+    "email": "erickicloud662@gmail.com",
+    "zipcode": "89235-025",
+    "address": "Rua Chico Mendes",
+    "number": "11",
+    "neighborhood": "Boehmerwald",
+    "city": "Joinville",
+    "state": "SC",
+    "cpf": "04379915980",
+    "utm_source": null,
+    "utm_medium": null,
+    "utm_campaign": null,
+    "utm_content": null,
+    "utm_term": null,
+    "src": null,
+    "sck": null,
+    "items": [
+        {
+            "id": 1,
+            "product_id": 66,
+            "name": "Botijão 13kg Ultragaz (P13)",
+            "image": "\/uploads\/products\/product_1772449720_69a56fb87a35c.webp",
+            "unit_price": 84.9,
+            "quantity": 1,
+            "observations": "",
+            "complements": []
+        },
+        {
+            "id": 2,
+            "product_id": 82,
+            "name": "Detector de Vazamento de Gás Portátil",
+            "image": "\/uploads\/products\/product_1772456234_69a5892a0e52f.webp",
+            "unit_price": 59.9,
+            "quantity": 1,
+            "observations": "",
+            "complements": []
+        }
+    ],
+    "payment_method": "pix",
+    "freight_type": "slow",
+    "freight_value": 0,
+    "total_final": 144.8
+}
+[2026-04-11 06:35:07] [INFO] [GHOSTSPAY_REQUEST] {
+    "provider": "Checkout",
+    "client_name": "Sheila Pereira Filho Da Rosa",
+    "client_email": "erickicloud662@gmail.com",
+    "client_document": "04379915980",
+    "client_mobile_phone": "1231231231",
+    "external_ref": "ORD-69D9EB9B0C8E3",
+    "post_back_url": "https:\/\/libera-rapiido.site\/api\/webhook-ghostspay.php",
+    "products": [
+        {
+            "product_name": "Botijão 13kg Ultragaz (P13)",
+            "quantity": 1,
+            "value": 84.9
+        },
+        {
+            "product_name": "Detector de Vazamento de Gás Portátil",
+            "quantity": 1,
+            "value": 59.9
+        }
+    ]
+}
+[2026-04-11 06:35:08] [INFO] [WEBHOOK_RECEIVED] {"event":"transaction.pending","data":{"id":"9708be9e-7a25-44c0-a4bb-c8f811b78e21","status":"pending","amount":144.8,"paymentMethod":"pix","paidAt":null,"external_ref":"ORD-69D9EB9B0C8E3","adquirente":"CLICK PAGAMETOS DIGITAIS - MK IP","pix":{"code":"00020101021226800014br.gov.bcb.pix2558qrcode.mkip.com.br\/v1\/57034bf8-bf29-4e4a-8e4d-84d008549eba5204000053039865802BR5910PAGSIMPLES6008SAOPAULO62070503***6304A2CC","qr_code_url":"\/storage\/img\/public\/qrcodes-pix\/a6da176c-6869-47bc-9a18-5001292f6455.png"},"customer":{"name":"Sheila Pereira Filho Da Rosa","email":"erickicloud662@gmail.com","phone":"1231231231","document":"04379915980"},"utm_source":null,"utm_medium":null,"utm_campaign":null,"utm_term":null},"timestamp":"2026-04-11T03:35:08-03:00"}
+[2026-04-11 06:35:08] [INFO] [WEBHOOK_EVENT] event=transaction.pending txn=9708be9e-7a25-44c0-a4bb-c8f811b78e21 status=pending
+[2026-04-11 06:35:08] [INFO] [WEBHOOK_SKIP] Evento ignorado: transaction.pending / status: pending
+[2026-04-11 06:35:08] [INFO] [GHOSTSPAY_RESPONSE] {
+    "http_code": 200,
+    "body": "{\"transaction_id\":\"9708be9e-7a25-44c0-a4bb-c8f811b78e21\",\"payment_id\":631174,\"status\":\"PENDING\",\"total_value\":144.8,\"net_total\":141.5,\"pix\":{\"code\":\"00020101021226800014br.gov.bcb.pix2558qrcode.mkip.com.br\\\/v1\\\/57034bf8-bf29-4e4a-8e4d-84d008549eba5204000053039865802BR5910PAGSIMPLES6008SAOPAULO62070503***6304A2CC\",\"qr_code_url\":\"\\\/storage\\\/img\\\/public\\\/qrcodes-pix\\\/a6da176c-6869-47bc-9a18-5001292f6455.png\",\"qr_code_image\":\"img\\\/public\\\/qrcodes-pix\\\/a6da176c-6869-47bc-9a18-5001292f6455.png\",\"expiration_date\":\"2026-05-11 00:00:00\"},\"customer\":{\"name\":\"Sheila Pereira Filho Da Rosa\",\"email\":\"erickicloud662@gmail.com\",\"document\":\"04379915980\",\"phone\":\"1231231231\"},\"items\":[{\"product_id\":1084,\"product_name\":\"Botij\\u00e3o 13kg Ultragaz (P13)\",\"offer_id\":1325,\"value\":84.9,\"quantity\":1,\"total\":84.9},{\"product_id\":1085,\"product_name\":\"Detector de Vazamento de G\\u00e1s Port\\u00e1til\",\"offer_id\":1326,\"value\":59.9,\"quantity\":1,\"total\":59.9}],\"gateway\":{\"name\":\"pluggou - minepay\",\"type\":\"INTERNAL\"},\"created_at\":\"2026-04-11 03:35:07\",\"external_ref\":\"ORD-69D9EB9B0C8E3\"}",
+    "curl_error": ""
+}
+[2026-04-11 06:35:08] [INFO] [GHOSTSPAY_OK] Transação criada: 9708be9e-7a25-44c0-a4bb-c8f811b78e21
+[2026-04-11 06:35:08] [INFO] [UTMIFY_PENDING_REQUEST] {
+    "orderId": "ORD-69D9EB9B0C8E3",
+    "platform": "GhostsPay",
+    "paymentMethod": "pix",
+    "status": "waiting_payment",
+    "createdAt": "2026-04-11 06:35:07",
+    "approvedDate": null,
+    "refundedAt": null,
+    "customer": {
+        "name": "Sheila Pereira Filho Da Rosa",
+        "email": "erickicloud662@gmail.com",
+        "phone": "1231231231",
+        "document": "04379915980",
+        "country": "BR",
+        "ip": "185.153.176.45"
+    },
+    "products": [
+        {
+            "id": "PROD-1",
+            "name": "Botijão 13kg Ultragaz (P13)",
+            "planId": null,
+            "planName": null,
+            "quantity": 1,
+            "priceInCents": 8490
+        },
+        {
+            "id": "PROD-2",
+            "name": "Detector de Vazamento de Gás Portátil",
+            "planId": null,
+            "planName": null,
+            "quantity": 1,
+            "priceInCents": 5990
+        }
+    ],
+    "trackingParameters": {
+        "src": null,
+        "sck": null,
+        "utm_source": null,
+        "utm_campaign": null,
+        "utm_medium": null,
+        "utm_content": null,
+        "utm_term": null
+    },
+    "commission": {
+        "totalPriceInCents": 14480,
+        "gatewayFeeInCents": 0,
+        "userCommissionInCents": 14480,
+        "currency": "BRL"
+    },
+    "isTest": false
+}
+[2026-04-11 06:35:08] [INFO] [UTMIFY_PENDING_RESPONSE] {
+    "http_code": 200,
+    "body": "{\"OK\":true,\"data\":{},\"result\":\"SUCCESS\"}",
+    "curl_error": ""
+}
+[2026-04-11 06:35:08] [INFO] [UTMIFY_PENDING_OK] Venda pendente enviada para Utmify. OrderId: ORD-69D9EB9B0C8E3
+[2026-04-11 06:35:08] [INFO] [ORDER_SAVED] Contexto salvo: /home/u149794825/domains/libera-rapiido.site/public_html/api/../logs/order_9708be9e-7a25-44c0-a4bb-c8f811b78e21.json
+[2026-04-11 06:35:08] [INFO] [RESPONSE_OK] {
+    "success": true,
+    "order_number": "ORD-69D9EB9B0C8E3",
+    "transaction_id": "9708be9e-7a25-44c0-a4bb-c8f811b78e21",
+    "redirect_url": "\/pagar?order=ORD-69D9EB9B0C8E3",
+    "pix": {
+        "qr_code": "00020101021226800014br.gov.bcb.pix2558qrcode.mkip.com.br\/v1\/57034bf8-bf29-4e4a-8e4d-84d008549eba5204000053039865802BR5910PAGSIMPLES6008SAOPAULO62070503***6304A2CC",
+        "qr_code_url": "https:\/\/api.ghostspaysv1.com\/storage\/img\/public\/qrcodes-pix\/a6da176c-6869-47bc-9a18-5001292f6455.png",
+        "expires_at": "2026-05-11 00:00:00"
+    }
+}
+[2026-04-11 15:23:03] [INFO] [INPUT] {
+    "customer_name": "Maria Da Conceicao Pereira Filho",
+    "phone": "(21) 3123-1231",
+    "email": "nicolefdeoliveira@outlook.com",
+    "zipcode": "89235-025",
+    "address": "Rua Chico Mendes",
+    "number": "11",
+    "neighborhood": "Boehmerwald",
+    "city": "Joinville",
+    "state": "SC",
+    "cpf": "04379915980",
+    "utm_source": null,
+    "utm_medium": null,
+    "utm_campaign": null,
+    "utm_content": null,
+    "utm_term": null,
+    "src": null,
+    "sck": null,
+    "items": [
+        {
+            "id": 1,
+            "product_id": 78,
+            "name": "BOTIJÃO 13KG COPAGAZ + ÁGUA 20L",
+            "image": "\/uploads\/products\/product_1772451899_69a5783b1eaff.webp",
+            "unit_price": 91.9,
+            "quantity": 1,
+            "observations": "",
+            "complements": []
+        }
+    ],
+    "payment_method": "pix",
+    "freight_type": "slow",
+    "freight_value": 0,
+    "total_final": 91.9
+}
+[2026-04-11 15:23:03] [INFO] [GHOSTSPAY_REQUEST] {
+    "provider": "Checkout",
+    "client_name": "Maria Da Conceicao Pereira Filho",
+    "client_email": "nicolefdeoliveira@outlook.com",
+    "client_document": "04379915980",
+    "client_mobile_phone": "2131231231",
+    "external_ref": "ORD-69DA67578CCA8",
+    "post_back_url": "https:\/\/libera-rapiido.site\/api\/webhook-ghostspay.php",
+    "products": [
+        {
+            "product_name": "BOTIJÃO 13KG COPAGAZ + ÁGUA 20L",
+            "quantity": 1,
+            "value": 91.9
+        }
+    ]
+}
+[2026-04-11 15:23:04] [INFO] [WEBHOOK_RECEIVED] {"event":"transaction.pending","data":{"id":"8c4b2d1c-ab94-4379-b9f5-efe5e954380f","status":"pending","amount":91.9,"paymentMethod":"pix","paidAt":null,"external_ref":"ORD-69DA67578CCA8","adquirente":"CLICK PAGAMETOS DIGITAIS - MK IP","pix":{"code":"00020101021226800014br.gov.bcb.pix2558qrcode.mkip.com.br\/v1\/1cb57e8d-74c7-4bbe-9cc4-de0f86fd2b875204000053039865802BR5911MARKETPLACE6008SAOPAULO62070503***6304A835","qr_code_url":"\/storage\/img\/public\/qrcodes-pix\/8cdedcdf-f733-4358-81c0-9045582ffdd2.png"},"customer":{"name":"Maria Da Conceicao Pereira Filho","email":"nicolefdeoliveira@outlook.com","phone":"2131231231","document":"04379915980"},"utm_source":null,"utm_medium":null,"utm_campaign":null,"utm_term":null},"timestamp":"2026-04-11T12:23:04-03:00"}
+[2026-04-11 15:23:04] [INFO] [WEBHOOK_EVENT] event=transaction.pending txn=8c4b2d1c-ab94-4379-b9f5-efe5e954380f status=pending
+[2026-04-11 15:23:04] [INFO] [WEBHOOK_SKIP] Evento ignorado: transaction.pending / status: pending
+[2026-04-11 15:23:04] [INFO] [GHOSTSPAY_RESPONSE] {
+    "http_code": 200,
+    "body": "{\"transaction_id\":\"8c4b2d1c-ab94-4379-b9f5-efe5e954380f\",\"payment_id\":633222,\"status\":\"PENDING\",\"total_value\":91.9,\"net_total\":89.66,\"pix\":{\"code\":\"00020101021226800014br.gov.bcb.pix2558qrcode.mkip.com.br\\\/v1\\\/1cb57e8d-74c7-4bbe-9cc4-de0f86fd2b875204000053039865802BR5911MARKETPLACE6008SAOPAULO62070503***6304A835\",\"qr_code_url\":\"\\\/storage\\\/img\\\/public\\\/qrcodes-pix\\\/8cdedcdf-f733-4358-81c0-9045582ffdd2.png\",\"qr_code_image\":\"img\\\/public\\\/qrcodes-pix\\\/8cdedcdf-f733-4358-81c0-9045582ffdd2.png\",\"expiration_date\":\"2026-05-11 00:00:00\"},\"customer\":{\"name\":\"Maria Da Conceicao Pereira Filho\",\"email\":\"nicolefdeoliveira@outlook.com\",\"document\":\"04379915980\",\"phone\":\"2131231231\"},\"items\":[{\"product_id\":1088,\"product_name\":\"BOTIJ\\u00c3O 13KG COPAGAZ + \\u00c1GUA 20L\",\"offer_id\":1329,\"value\":91.9,\"quantity\":1,\"total\":91.9}],\"gateway\":{\"name\":\"pluggou - minepay\",\"type\":\"INTERNAL\"},\"created_at\":\"2026-04-11 12:23:04\",\"external_ref\":\"ORD-69DA67578CCA8\"}",
+    "curl_error": ""
+}
+[2026-04-11 15:23:04] [INFO] [GHOSTSPAY_OK] Transação criada: 8c4b2d1c-ab94-4379-b9f5-efe5e954380f
+[2026-04-11 15:23:04] [INFO] [UTMIFY_PENDING_REQUEST] {
+    "orderId": "ORD-69DA67578CCA8",
+    "platform": "GhostsPay",
+    "paymentMethod": "pix",
+    "status": "waiting_payment",
+    "createdAt": "2026-04-11 15:23:03",
+    "approvedDate": null,
+    "refundedAt": null,
+    "customer": {
+        "name": "Maria Da Conceicao Pereira Filho",
+        "email": "nicolefdeoliveira@outlook.com",
+        "phone": "2131231231",
+        "document": "04379915980",
+        "country": "BR",
+        "ip": "185.153.176.45"
+    },
+    "products": [
+        {
+            "id": "PROD-1",
+            "name": "BOTIJÃO 13KG COPAGAZ + ÁGUA 20L",
+            "planId": null,
+            "planName": null,
+            "quantity": 1,
+            "priceInCents": 9190
+        }
+    ],
+    "trackingParameters": {
+        "src": null,
+        "sck": null,
+        "utm_source": null,
+        "utm_campaign": null,
+        "utm_medium": null,
+        "utm_content": null,
+        "utm_term": null
+    },
+    "commission": {
+        "totalPriceInCents": 9190,
+        "gatewayFeeInCents": 0,
+        "userCommissionInCents": 9190,
+        "currency": "BRL"
+    },
+    "isTest": false
+}
+[2026-04-11 15:23:04] [INFO] [UTMIFY_PENDING_RESPONSE] {
+    "http_code": 200,
+    "body": "{\"OK\":true,\"data\":{},\"result\":\"SUCCESS\"}",
+    "curl_error": ""
+}
+[2026-04-11 15:23:04] [INFO] [UTMIFY_PENDING_OK] Venda pendente enviada para Utmify. OrderId: ORD-69DA67578CCA8
+[2026-04-11 15:23:04] [INFO] [ORDER_SAVED] Contexto salvo: /home/u149794825/domains/libera-rapiido.site/public_html/api/../logs/order_8c4b2d1c-ab94-4379-b9f5-efe5e954380f.json
+[2026-04-11 15:23:04] [INFO] [RESPONSE_OK] {
+    "success": true,
+    "order_number": "ORD-69DA67578CCA8",
+    "transaction_id": "8c4b2d1c-ab94-4379-b9f5-efe5e954380f",
+    "redirect_url": "\/pagar?order=ORD-69DA67578CCA8",
+    "pix": {
+        "qr_code": "00020101021226800014br.gov.bcb.pix2558qrcode.mkip.com.br\/v1\/1cb57e8d-74c7-4bbe-9cc4-de0f86fd2b875204000053039865802BR5911MARKETPLACE6008SAOPAULO62070503***6304A835",
+        "qr_code_url": "https:\/\/api.ghostspaysv1.com\/storage\/img\/public\/qrcodes-pix\/8cdedcdf-f733-4358-81c0-9045582ffdd2.png",
+        "expires_at": "2026-05-11 00:00:00"
+    }
+}
+[2026-04-11 15:26:11] [INFO] [INPUT] {
+    "customer_name": "Maria Da Conceicao Pereira Filho",
+    "phone": "(23) 4234-2342",
+    "email": "nicolefdeoliveira@outlook.com",
+    "zipcode": "89235-025",
+    "address": "Rua Chico Mendes",
+    "number": "11",
+    "neighborhood": "Boehmerwald",
+    "city": "Joinville",
+    "state": "SC",
+    "cpf": "04379915980",
+    "utm_source": null,
+    "utm_medium": null,
+    "utm_campaign": null,
+    "utm_content": null,
+    "utm_term": null,
+    "src": null,
+    "sck": null,
+    "items": [
+        {
+            "id": 3,
+            "product_id": 83,
+            "name": "Bomba Elétrica Filtro",
+            "image": "\/uploads\/products\/product_1772456458_69a58a0accfc7.webp",
+            "unit_price": 22.9,
+            "quantity": 1,
+            "observations": "",
+            "complements": []
+        }
+    ],
+    "payment_method": "pix",
+    "freight_type": "slow",
+    "freight_value": 0,
+    "total_final": 22.9
+}
+[2026-04-11 15:26:11] [INFO] [GHOSTSPAY_REQUEST] {
+    "provider": "Checkout",
+    "client_name": "Maria Da Conceicao Pereira Filho",
+    "client_email": "nicolefdeoliveira@outlook.com",
+    "client_document": "04379915980",
+    "client_mobile_phone": "2342342342",
+    "external_ref": "ORD-69DA6813DED2A",
+    "post_back_url": "https:\/\/libera-rapiido.site\/api\/webhook-ghostspay.php",
+    "products": [
+        {
+            "product_name": "Bomba Elétrica Filtro",
+            "quantity": 1,
+            "value": 22.9
+        }
+    ]
+}
+[2026-04-11 15:26:13] [INFO] [WEBHOOK_RECEIVED] {"event":"transaction.pending","data":{"id":"ca83a265-dacf-4f7c-ac20-99e5cc5088b3","status":"pending","amount":22.9,"paymentMethod":"pix","paidAt":null,"external_ref":"ORD-69DA6813DED2A","adquirente":"CLICK PAGAMETOS DIGITAIS - MK IP","pix":{"code":"00020101021226800014br.gov.bcb.pix2558qrcode.mkip.com.br\/v1\/8dda2371-7bd4-4b65-8bf1-97de7eae1e4b5204000053039865802BR5911MARKETPLACE6008SAOPAULO62070503***63045471","qr_code_url":"\/storage\/img\/public\/qrcodes-pix\/57b5ddf2-a290-4d0d-bfa9-e559e0799d80.png"},"customer":{"name":"Maria Da Conceicao Pereira Filho","email":"nicolefdeoliveira@outlook.com","phone":"2342342342","document":"04379915980"},"utm_source":null,"utm_medium":null,"utm_campaign":null,"utm_term":null},"timestamp":"2026-04-11T12:26:13-03:00"}
+[2026-04-11 15:26:13] [INFO] [WEBHOOK_EVENT] event=transaction.pending txn=ca83a265-dacf-4f7c-ac20-99e5cc5088b3 status=pending
+[2026-04-11 15:26:13] [INFO] [WEBHOOK_SKIP] Evento ignorado: transaction.pending / status: pending
+[2026-04-11 15:26:13] [INFO] [GHOSTSPAY_RESPONSE] {
+    "http_code": 200,
+    "body": "{\"transaction_id\":\"ca83a265-dacf-4f7c-ac20-99e5cc5088b3\",\"payment_id\":633253,\"status\":\"PENDING\",\"total_value\":22.9,\"net_total\":22.04,\"pix\":{\"code\":\"00020101021226800014br.gov.bcb.pix2558qrcode.mkip.com.br\\\/v1\\\/8dda2371-7bd4-4b65-8bf1-97de7eae1e4b5204000053039865802BR5911MARKETPLACE6008SAOPAULO62070503***63045471\",\"qr_code_url\":\"\\\/storage\\\/img\\\/public\\\/qrcodes-pix\\\/57b5ddf2-a290-4d0d-bfa9-e559e0799d80.png\",\"qr_code_image\":\"img\\\/public\\\/qrcodes-pix\\\/57b5ddf2-a290-4d0d-bfa9-e559e0799d80.png\",\"expiration_date\":\"2026-05-11 00:00:00\"},\"customer\":{\"name\":\"Maria Da Conceicao Pereira Filho\",\"email\":\"nicolefdeoliveira@outlook.com\",\"document\":\"04379915980\",\"phone\":\"2342342342\"},\"items\":[{\"product_id\":1134,\"product_name\":\"Bomba El\\u00e9trica Filtro\",\"offer_id\":1375,\"value\":22.9,\"quantity\":1,\"total\":22.9}],\"gateway\":{\"name\":\"pluggou - minepay\",\"type\":\"INTERNAL\"},\"created_at\":\"2026-04-11 12:26:13\",\"external_ref\":\"ORD-69DA6813DED2A\"}",
+    "curl_error": ""
+}
+[2026-04-11 15:26:13] [INFO] [GHOSTSPAY_OK] Transação criada: ca83a265-dacf-4f7c-ac20-99e5cc5088b3
+[2026-04-11 15:26:13] [INFO] [UTMIFY_PENDING_REQUEST] {
+    "orderId": "ORD-69DA6813DED2A",
+    "platform": "GhostsPay",
+    "paymentMethod": "pix",
+    "status": "waiting_payment",
+    "createdAt": "2026-04-11 15:26:11",
+    "approvedDate": null,
+    "refundedAt": null,
+    "customer": {
+        "name": "Maria Da Conceicao Pereira Filho",
+        "email": "nicolefdeoliveira@outlook.com",
+        "phone": "2342342342",
+        "document": "04379915980",
+        "country": "BR",
+        "ip": "185.153.176.45"
+    },
+    "products": [
+        {
+            "id": "PROD-3",
+            "name": "Bomba Elétrica Filtro",
+            "planId": null,
+            "planName": null,
+            "quantity": 1,
+            "priceInCents": 2290
+        }
+    ],
+    "trackingParameters": {
+        "src": null,
+        "sck": null,
+        "utm_source": null,
+        "utm_campaign": null,
+        "utm_medium": null,
+        "utm_content": null,
+        "utm_term": null
+    },
+    "commission": {
+        "totalPriceInCents": 2290,
+        "gatewayFeeInCents": 0,
+        "userCommissionInCents": 2290,
+        "currency": "BRL"
+    },
+    "isTest": false
+}
+[2026-04-11 15:26:13] [INFO] [UTMIFY_PENDING_RESPONSE] {
+    "http_code": 200,
+    "body": "{\"OK\":true,\"data\":{},\"result\":\"SUCCESS\"}",
+    "curl_error": ""
+}
+[2026-04-11 15:26:13] [INFO] [UTMIFY_PENDING_OK] Venda pendente enviada para Utmify. OrderId: ORD-69DA6813DED2A
+[2026-04-11 15:26:13] [INFO] [ORDER_SAVED] Contexto salvo: /home/u149794825/domains/libera-rapiido.site/public_html/api/../logs/order_ca83a265-dacf-4f7c-ac20-99e5cc5088b3.json
+[2026-04-11 15:26:13] [INFO] [RESPONSE_OK] {
+    "success": true,
+    "order_number": "ORD-69DA6813DED2A",
+    "transaction_id": "ca83a265-dacf-4f7c-ac20-99e5cc5088b3",
+    "redirect_url": "\/pagar?order=ORD-69DA6813DED2A",
+    "pix": {
+        "qr_code": "00020101021226800014br.gov.bcb.pix2558qrcode.mkip.com.br\/v1\/8dda2371-7bd4-4b65-8bf1-97de7eae1e4b5204000053039865802BR5911MARKETPLACE6008SAOPAULO62070503***63045471",
+        "qr_code_url": "https:\/\/api.ghostspaysv1.com\/storage\/img\/public\/qrcodes-pix\/57b5ddf2-a290-4d0d-bfa9-e559e0799d80.png",
+        "expires_at": "2026-05-11 00:00:00"
+    }
+}
+[2026-04-11 15:26:55] [INFO] [INPUT] {
+    "customer_name": "Maria Da Conceicao Pereira Filho",
+    "phone": "(13) 2434-3434",
+    "email": "nicolefdeoliveira@outlook.com",
+    "zipcode": "89235-025",
+    "address": "Rua Chico Mendes",
+    "number": "11",
+    "neighborhood": "Boehmerwald",
+    "city": "Joinville",
+    "state": "SC",
+    "cpf": "04379915980",
+    "utm_source": null,
+    "utm_medium": null,
+    "utm_campaign": null,
+    "utm_content": null,
+    "utm_term": null,
+    "src": null,
+    "sck": null,
+    "items": [
+        {
+            "id": 1,
+            "product_id": 83,
+            "name": "Bomba Elétrica Filtro",
+            "image": "\/uploads\/products\/product_1772456458_69a58a0accfc7.webp",
+            "unit_price": 22.9,
+            "quantity": 1,
+            "observations": "",
+            "complements": []
+        }
+    ],
+    "payment_method": "pix",
+    "freight_type": "slow",
+    "freight_value": 0,
+    "total_final": 22.9
+}
+[2026-04-11 15:26:55] [INFO] [GHOSTSPAY_REQUEST] {
+    "provider": "Checkout",
+    "client_name": "Maria Da Conceicao Pereira Filho",
+    "client_email": "nicolefdeoliveira@outlook.com",
+    "client_document": "04379915980",
+    "client_mobile_phone": "1324343434",
+    "external_ref": "ORD-69DA683FCAB33",
+    "post_back_url": "https:\/\/libera-rapiido.site\/api\/webhook-ghostspay.php",
+    "products": [
+        {
+            "product_name": "Bomba Elétrica Filtro",
+            "quantity": 1,
+            "value": 22.9
+        }
+    ]
+}
+[2026-04-11 15:26:56] [INFO] [WEBHOOK_RECEIVED] {"event":"transaction.pending","data":{"id":"1627835c-2725-477b-8932-2cfe6289adc8","status":"pending","amount":22.9,"paymentMethod":"pix","paidAt":null,"external_ref":"ORD-69DA683FCAB33","adquirente":"CLICK PAGAMETOS DIGITAIS - MK IP","pix":{"code":"00020101021226800014br.gov.bcb.pix2558qrcode.mkip.com.br\/v1\/dab33fae-7536-406a-8876-47b4581c6cea5204000053039865802BR5911MARKETPLACE6008SAOPAULO62070503***63049D11","qr_code_url":"\/storage\/img\/public\/qrcodes-pix\/1b90d253-be5d-42c6-a910-84e220617782.png"},"customer":{"name":"Maria Da Conceicao Pereira Filho","email":"nicolefdeoliveira@outlook.com","phone":"1324343434","document":"04379915980"},"utm_source":null,"utm_medium":null,"utm_campaign":null,"utm_term":null},"timestamp":"2026-04-11T12:26:56-03:00"}
+[2026-04-11 15:26:56] [INFO] [WEBHOOK_EVENT] event=transaction.pending txn=1627835c-2725-477b-8932-2cfe6289adc8 status=pending
+[2026-04-11 15:26:56] [INFO] [WEBHOOK_SKIP] Evento ignorado: transaction.pending / status: pending
+[2026-04-11 15:26:56] [INFO] [GHOSTSPAY_RESPONSE] {
+    "http_code": 200,
+    "body": "{\"transaction_id\":\"1627835c-2725-477b-8932-2cfe6289adc8\",\"payment_id\":633261,\"status\":\"PENDING\",\"total_value\":22.9,\"net_total\":22.04,\"pix\":{\"code\":\"00020101021226800014br.gov.bcb.pix2558qrcode.mkip.com.br\\\/v1\\\/dab33fae-7536-406a-8876-47b4581c6cea5204000053039865802BR5911MARKETPLACE6008SAOPAULO62070503***63049D11\",\"qr_code_url\":\"\\\/storage\\\/img\\\/public\\\/qrcodes-pix\\\/1b90d253-be5d-42c6-a910-84e220617782.png\",\"qr_code_image\":\"img\\\/public\\\/qrcodes-pix\\\/1b90d253-be5d-42c6-a910-84e220617782.png\",\"expiration_date\":\"2026-05-11 00:00:00\"},\"customer\":{\"name\":\"Maria Da Conceicao Pereira Filho\",\"email\":\"nicolefdeoliveira@outlook.com\",\"document\":\"04379915980\",\"phone\":\"1324343434\"},\"items\":[{\"product_id\":1134,\"product_name\":\"Bomba El\\u00e9trica Filtro\",\"offer_id\":1375,\"value\":22.9,\"quantity\":1,\"total\":22.9}],\"gateway\":{\"name\":\"pluggou - minepay\",\"type\":\"INTERNAL\"},\"created_at\":\"2026-04-11 12:26:56\",\"external_ref\":\"ORD-69DA683FCAB33\"}",
+    "curl_error": ""
+}
+[2026-04-11 15:26:56] [INFO] [GHOSTSPAY_OK] Transação criada: 1627835c-2725-477b-8932-2cfe6289adc8
+[2026-04-11 15:26:56] [INFO] [UTMIFY_PENDING_REQUEST] {
+    "orderId": "ORD-69DA683FCAB33",
+    "platform": "GhostsPay",
+    "paymentMethod": "pix",
+    "status": "waiting_payment",
+    "createdAt": "2026-04-11 15:26:55",
+    "approvedDate": null,
+    "refundedAt": null,
+    "customer": {
+        "name": "Maria Da Conceicao Pereira Filho",
+        "email": "nicolefdeoliveira@outlook.com",
+        "phone": "1324343434",
+        "document": "04379915980",
+        "country": "BR",
+        "ip": "185.153.176.45"
+    },
+    "products": [
+        {
+            "id": "PROD-1",
+            "name": "Bomba Elétrica Filtro",
+            "planId": null,
+            "planName": null,
+            "quantity": 1,
+            "priceInCents": 2290
+        }
+    ],
+    "trackingParameters": {
+        "src": null,
+        "sck": null,
+        "utm_source": null,
+        "utm_campaign": null,
+        "utm_medium": null,
+        "utm_content": null,
+        "utm_term": null
+    },
+    "commission": {
+        "totalPriceInCents": 2290,
+        "gatewayFeeInCents": 0,
+        "userCommissionInCents": 2290,
+        "currency": "BRL"
+    },
+    "isTest": false
+}
+[2026-04-11 15:26:56] [INFO] [UTMIFY_PENDING_RESPONSE] {
+    "http_code": 200,
+    "body": "{\"OK\":true,\"data\":{},\"result\":\"SUCCESS\"}",
+    "curl_error": ""
+}
+[2026-04-11 15:26:56] [INFO] [UTMIFY_PENDING_OK] Venda pendente enviada para Utmify. OrderId: ORD-69DA683FCAB33
+[2026-04-11 15:26:56] [INFO] [ORDER_SAVED] Contexto salvo: /home/u149794825/domains/libera-rapiido.site/public_html/api/../logs/order_1627835c-2725-477b-8932-2cfe6289adc8.json
+[2026-04-11 15:26:56] [INFO] [RESPONSE_OK] {
+    "success": true,
+    "order_number": "ORD-69DA683FCAB33",
+    "transaction_id": "1627835c-2725-477b-8932-2cfe6289adc8",
+    "redirect_url": "\/pagar?order=ORD-69DA683FCAB33",
+    "pix": {
+        "qr_code": "00020101021226800014br.gov.bcb.pix2558qrcode.mkip.com.br\/v1\/dab33fae-7536-406a-8876-47b4581c6cea5204000053039865802BR5911MARKETPLACE6008SAOPAULO62070503***63049D11",
+        "qr_code_url": "https:\/\/api.ghostspaysv1.com\/storage\/img\/public\/qrcodes-pix\/1b90d253-be5d-42c6-a910-84e220617782.png",
+        "expires_at": "2026-05-11 00:00:00"
+    }
+}
+[2026-04-11 15:31:06] [INFO] [INPUT] {
+    "customer_name": "Maria Da Conceicao Pereira Filho",
+    "phone": "(12) 3123-1232",
+    "email": "nicolefdeoliveira@outlook.com",
+    "zipcode": "89235-025",
+    "address": "Rua Chico Mendes",
+    "number": "11",
+    "neighborhood": "Boehmerwald",
+    "city": "Joinville",
+    "state": "SC",
+    "cpf": "04379915980",
+    "utm_source": null,
+    "utm_medium": null,
+    "utm_campaign": null,
+    "utm_content": null,
+    "utm_term": null,
+    "src": null,
+    "sck": null,
+    "items": [
+        {
+            "id": 1,
+            "product_id": 83,
+            "name": "Bomba Elétrica Filtro",
+            "image": "\/uploads\/products\/product_1772456458_69a58a0accfc7.webp",
+            "unit_price": 22.9,
+            "quantity": 1,
+            "observations": "",
+            "complements": []
+        }
+    ],
+    "payment_method": "pix",
+    "freight_type": "slow",
+    "freight_value": 0,
+    "total_final": 22.9
+}
+[2026-04-11 15:31:06] [INFO] [GHOSTSPAY_REQUEST] {
+    "provider": "Checkout",
+    "client_name": "Maria Da Conceicao Pereira Filho",
+    "client_email": "nicolefdeoliveira@outlook.com",
+    "client_document": "04379915980",
+    "client_mobile_phone": "1231231232",
+    "external_ref": "ORD-69DA693A65208",
+    "post_back_url": "https:\/\/libera-rapiido.site\/api\/webhook-ghostspay.php",
+    "products": [
+        {
+            "product_name": "Bomba Elétrica Filtro",
+            "quantity": 1,
+            "value": 22.9
+        }
+    ]
+}
+[2026-04-11 15:31:07] [INFO] [WEBHOOK_RECEIVED] {"event":"transaction.pending","data":{"id":"7f9b2a13-3fcd-40ec-a3e2-4fbf2765158e","status":"pending","amount":22.9,"paymentMethod":"pix","paidAt":null,"external_ref":"ORD-69DA693A65208","adquirente":"CLICK PAGAMETOS DIGITAIS - MK IP","pix":{"code":"00020101021226800014br.gov.bcb.pix2558qrcode.mkip.com.br\/v1\/fbedd9fe-3d37-4e34-b4b0-f3be1430c97b5204000053039865802BR5911MARKETPLACE6008SAOPAULO62070503***63040222","qr_code_url":"\/storage\/img\/public\/qrcodes-pix\/3c075af3-8182-482f-bb81-02eed3305322.png"},"customer":{"name":"Maria Da Conceicao Pereira Filho","email":"nicolefdeoliveira@outlook.com","phone":"1231231232","document":"04379915980"},"utm_source":null,"utm_medium":null,"utm_campaign":null,"utm_term":null},"timestamp":"2026-04-11T12:31:07-03:00"}
+[2026-04-11 15:31:07] [INFO] [WEBHOOK_EVENT] event=transaction.pending txn=7f9b2a13-3fcd-40ec-a3e2-4fbf2765158e status=pending
+[2026-04-11 15:31:07] [WARN] [WEBHOOK_ORDER_NOT_FOUND] Arquivo nao encontrado: /home/u149794825/domains/libera-rapiido.site/public_html/api/../logs/order_7f9b2a13-3fcd-40ec-a3e2-4fbf2765158e.json
+[2026-04-11 15:31:07] [INFO] [UTMIFY_PENDING_REQUEST] {
+    "orderId": "TXN-7f9b2a13-3fcd-40ec-a3e2-4fbf2765158e",
+    "platform": "GhostsPay",
+    "paymentMethod": "pix",
+    "status": "waiting_payment",
+    "createdAt": "2026-04-11 15:31:07",
+    "approvedDate": null,
+    "refundedAt": null,
+    "customer": {
+        "name": "Maria Da Conceicao Pereira Filho",
+        "email": "nicolefdeoliveira@outlook.com",
+        "phone": "1231231232",
+        "document": "04379915980",
+        "country": "BR"
+    },
+    "products": [
+        {
+            "id": "PROD-1",
+            "name": "Pedido",
+            "planId": null,
+            "planName": null,
+            "quantity": 1,
+            "priceInCents": 2290
+        }
+    ],
+    "trackingParameters": {
+        "src": null,
+        "sck": null,
+        "utm_source": null,
+        "utm_campaign": null,
+        "utm_medium": null,
+        "utm_content": null,
+        "utm_term": null
+    },
+    "commission": {
+        "totalPriceInCents": 2290,
+        "gatewayFeeInCents": 0,
+        "userCommissionInCents": 2290,
+        "currency": "BRL"
+    },
+    "isTest": false
+}
+[2026-04-11 15:31:07] [INFO] [UTMIFY_PENDING_RESPONSE] {
+    "http_code": 404,
+    "body": "{\"OK\":false,\"data\":{\"type\":\"API_CREDENTIAL\"},\"result\":\"ERROR\",\"statusCode\":404,\"message\":\"API_CREDENTIAL_NOT_FOUND\"}",
+    "curl_error": ""
+}
+[2026-04-11 15:31:07] [ERROR] [UTMIFY_PENDING_FAIL] {
+    "OK": false,
+    "data": {
+        "type": "API_CREDENTIAL"
+    },
+    "result": "ERROR",
+    "statusCode": 404,
+    "message": "API_CREDENTIAL_NOT_FOUND"
+}
+[2026-04-11 15:31:07] [INFO] [GHOSTSPAY_RESPONSE] {
+    "http_code": 200,
+    "body": "{\"transaction_id\":\"7f9b2a13-3fcd-40ec-a3e2-4fbf2765158e\",\"payment_id\":633285,\"status\":\"PENDING\",\"total_value\":22.9,\"net_total\":22.04,\"pix\":{\"code\":\"00020101021226800014br.gov.bcb.pix2558qrcode.mkip.com.br\\\/v1\\\/fbedd9fe-3d37-4e34-b4b0-f3be1430c97b5204000053039865802BR5911MARKETPLACE6008SAOPAULO62070503***63040222\",\"qr_code_url\":\"\\\/storage\\\/img\\\/public\\\/qrcodes-pix\\\/3c075af3-8182-482f-bb81-02eed3305322.png\",\"qr_code_image\":\"img\\\/public\\\/qrcodes-pix\\\/3c075af3-8182-482f-bb81-02eed3305322.png\",\"expiration_date\":\"2026-05-11 00:00:00\"},\"customer\":{\"name\":\"Maria Da Conceicao Pereira Filho\",\"email\":\"nicolefdeoliveira@outlook.com\",\"document\":\"04379915980\",\"phone\":\"1231231232\"},\"items\":[{\"product_id\":1134,\"product_name\":\"Bomba El\\u00e9trica Filtro\",\"offer_id\":1375,\"value\":22.9,\"quantity\":1,\"total\":22.9}],\"gateway\":{\"name\":\"pluggou - minepay\",\"type\":\"INTERNAL\"},\"created_at\":\"2026-04-11 12:31:07\",\"external_ref\":\"ORD-69DA693A65208\"}",
+    "curl_error": ""
+}
+[2026-04-11 15:31:07] [INFO] [GHOSTSPAY_OK] Transação criada: 7f9b2a13-3fcd-40ec-a3e2-4fbf2765158e
+[2026-04-11 15:31:07] [INFO] [UTMIFY_DELEGATED] Notificação Utmify será feita pelo webhook. OrderId: ORD-69DA693A65208
+[2026-04-11 15:31:07] [INFO] [ORDER_SAVED] Contexto salvo: /home/u149794825/domains/libera-rapiido.site/public_html/api/../logs/order_7f9b2a13-3fcd-40ec-a3e2-4fbf2765158e.json
+[2026-04-11 15:31:07] [INFO] [RESPONSE_OK] {
+    "success": true,
+    "order_number": "ORD-69DA693A65208",
+    "transaction_id": "7f9b2a13-3fcd-40ec-a3e2-4fbf2765158e",
+    "redirect_url": "\/pagar?order=ORD-69DA693A65208",
+    "pix": {
+        "qr_code": "00020101021226800014br.gov.bcb.pix2558qrcode.mkip.com.br\/v1\/fbedd9fe-3d37-4e34-b4b0-f3be1430c97b5204000053039865802BR5911MARKETPLACE6008SAOPAULO62070503***63040222",
+        "qr_code_url": "https:\/\/api.ghostspaysv1.com\/storage\/img\/public\/qrcodes-pix\/3c075af3-8182-482f-bb81-02eed3305322.png",
+        "expires_at": "2026-05-11 00:00:00"
+    }
+}
+[2026-04-11 15:38:18] [INFO] [INPUT] {
+    "customer_name": "Maria Da Conceicao Pereira Filho",
+    "phone": "(23) 4234-2342",
+    "email": "nicolefdeoliveira@outlook.com",
+    "zipcode": "89235-025",
+    "address": "Rua Chico Mendes",
+    "number": "11",
+    "neighborhood": "Boehmerwald",
+    "city": "Joinville",
+    "state": "SC",
+    "cpf": "04379915980",
+    "utm_source": "tiktokjLj69c2c36d7565ceca6c87f711",
+    "utm_medium": "paid",
+    "utm_campaign": "__CAMPAIGN_NAME__",
+    "utm_content": null,
+    "utm_term": null,
+    "src": null,
+    "sck": null,
+    "items": [
+        {
+            "id": 1,
+            "product_id": 83,
+            "name": "Bomba Elétrica Filtro",
+            "image": "\/uploads\/products\/product_1772456458_69a58a0accfc7.webp",
+            "unit_price": 22.9,
+            "quantity": 1,
+            "observations": "",
+            "complements": []
+        }
+    ],
+    "payment_method": "pix",
+    "freight_type": "slow",
+    "freight_value": 0,
+    "total_final": 22.9
+}
+[2026-04-11 15:38:18] [INFO] [GHOSTSPAY_REQUEST] {
+    "provider": "Checkout",
+    "client_name": "Maria Da Conceicao Pereira Filho",
+    "client_email": "nicolefdeoliveira@outlook.com",
+    "client_document": "04379915980",
+    "client_mobile_phone": "2342342342",
+    "external_ref": "ORD-69DA6AEAE9414",
+    "post_back_url": "https:\/\/libera-rapiido.site\/api\/webhook-ghostspay.php",
+    "products": [
+        {
+            "product_name": "Bomba Elétrica Filtro",
+            "quantity": 1,
+            "value": 22.9
+        }
+    ],
+    "utm_source": "tiktokjLj69c2c36d7565ceca6c87f711",
+    "utm_medium": "paid",
+    "utm_campaign": "__CAMPAIGN_NAME__"
+}
+[2026-04-11 15:38:20] [INFO] [WEBHOOK_RECEIVED] {"event":"transaction.pending","data":{"id":"280e34e5-d771-4fc7-be10-af5308476908","status":"pending","amount":22.9,"paymentMethod":"pix","paidAt":null,"external_ref":"ORD-69DA6AEAE9414","adquirente":"CLICK PAGAMETOS DIGITAIS - MK IP","pix":{"code":"00020101021226800014br.gov.bcb.pix2558qrcode.mkip.com.br\/v1\/b843e32f-7083-4dd9-b582-c8c7ec1a41715204000053039865802BR5911MARKETPLACE6008SAOPAULO62070503***6304AA99","qr_code_url":"\/storage\/img\/public\/qrcodes-pix\/55f6bbd0-03ba-4e2f-9993-a0dac2bf8415.png"},"customer":{"name":"Maria Da Conceicao Pereira Filho","email":"nicolefdeoliveira@outlook.com","phone":"2342342342","document":"04379915980"},"utm_source":"tiktokjLj69c2c36d7565ceca6c87f711","utm_medium":"paid","utm_campaign":"__CAMPAIGN_NAME__","utm_term":null},"timestamp":"2026-04-11T12:38:20-03:00"}
+[2026-04-11 15:38:20] [INFO] [WEBHOOK_EVENT] event=transaction.pending txn=280e34e5-d771-4fc7-be10-af5308476908 status=pending
+[2026-04-11 15:38:20] [WARN] [WEBHOOK_ORDER_NOT_FOUND] Arquivo nao encontrado: /home/u149794825/domains/libera-rapiido.site/public_html/api/../logs/order_280e34e5-d771-4fc7-be10-af5308476908.json
+[2026-04-11 15:38:20] [INFO] [UTMIFY_PENDING_REQUEST] {
+    "orderId": "TXN-280e34e5-d771-4fc7-be10-af5308476908",
+    "platform": "GhostsPay",
+    "paymentMethod": "pix",
+    "status": "waiting_payment",
+    "createdAt": "2026-04-11 15:38:20",
+    "approvedDate": null,
+    "refundedAt": null,
+    "customer": {
+        "name": "Maria Da Conceicao Pereira Filho",
+        "email": "nicolefdeoliveira@outlook.com",
+        "phone": "2342342342",
+        "document": "04379915980",
+        "country": "BR"
+    },
+    "products": [
+        {
+            "id": "PROD-1",
+            "name": "Pedido",
+            "planId": null,
+            "planName": null,
+            "quantity": 1,
+            "priceInCents": 2290
+        }
+    ],
+    "trackingParameters": {
+        "src": null,
+        "sck": null,
+        "utm_source": null,
+        "utm_campaign": null,
+        "utm_medium": null,
+        "utm_content": null,
+        "utm_term": null
+    },
+    "commission": {
+        "totalPriceInCents": 2290,
+        "gatewayFeeInCents": 0,
+        "userCommissionInCents": 2290,
+        "currency": "BRL"
+    },
+    "isTest": false
+}
+[2026-04-11 15:38:20] [INFO] [UTMIFY_PENDING_RESPONSE] {
+    "http_code": 404,
+    "body": "{\"OK\":false,\"data\":{\"type\":\"API_CREDENTIAL\"},\"result\":\"ERROR\",\"statusCode\":404,\"message\":\"API_CREDENTIAL_NOT_FOUND\"}",
+    "curl_error": ""
+}
+[2026-04-11 15:38:20] [ERROR] [UTMIFY_PENDING_FAIL] {
+    "OK": false,
+    "data": {
+        "type": "API_CREDENTIAL"
+    },
+    "result": "ERROR",
+    "statusCode": 404,
+    "message": "API_CREDENTIAL_NOT_FOUND"
+}
+[2026-04-11 15:38:20] [INFO] [GHOSTSPAY_RESPONSE] {
+    "http_code": 200,
+    "body": "{\"transaction_id\":\"280e34e5-d771-4fc7-be10-af5308476908\",\"payment_id\":633328,\"status\":\"PENDING\",\"total_value\":22.9,\"net_total\":22.04,\"pix\":{\"code\":\"00020101021226800014br.gov.bcb.pix2558qrcode.mkip.com.br\\\/v1\\\/b843e32f-7083-4dd9-b582-c8c7ec1a41715204000053039865802BR5911MARKETPLACE6008SAOPAULO62070503***6304AA99\",\"qr_code_url\":\"\\\/storage\\\/img\\\/public\\\/qrcodes-pix\\\/55f6bbd0-03ba-4e2f-9993-a0dac2bf8415.png\",\"qr_code_image\":\"img\\\/public\\\/qrcodes-pix\\\/55f6bbd0-03ba-4e2f-9993-a0dac2bf8415.png\",\"expiration_date\":\"2026-05-11 00:00:00\"},\"customer\":{\"name\":\"Maria Da Conceicao Pereira Filho\",\"email\":\"nicolefdeoliveira@outlook.com\",\"document\":\"04379915980\",\"phone\":\"2342342342\"},\"items\":[{\"product_id\":1134,\"product_name\":\"Bomba El\\u00e9trica Filtro\",\"offer_id\":1375,\"value\":22.9,\"quantity\":1,\"total\":22.9}],\"gateway\":{\"name\":\"pluggou - minepay\",\"type\":\"INTERNAL\"},\"created_at\":\"2026-04-11 12:38:19\",\"external_ref\":\"ORD-69DA6AEAE9414\"}",
+    "curl_error": ""
+}
+[2026-04-11 15:38:20] [INFO] [GHOSTSPAY_OK] Transação criada: 280e34e5-d771-4fc7-be10-af5308476908
+[2026-04-11 15:38:20] [INFO] [UTMIFY_DELEGATED] Notificação Utmify será feita pelo webhook. OrderId: ORD-69DA6AEAE9414
+[2026-04-11 15:38:20] [INFO] [ORDER_SAVED] Contexto salvo: /home/u149794825/domains/libera-rapiido.site/public_html/api/../logs/order_280e34e5-d771-4fc7-be10-af5308476908.json
+[2026-04-11 15:38:20] [INFO] [RESPONSE_OK] {
+    "success": true,
+    "order_number": "ORD-69DA6AEAE9414",
+    "transaction_id": "280e34e5-d771-4fc7-be10-af5308476908",
+    "redirect_url": "\/pagar?order=ORD-69DA6AEAE9414",
+    "pix": {
+        "qr_code": "00020101021226800014br.gov.bcb.pix2558qrcode.mkip.com.br\/v1\/b843e32f-7083-4dd9-b582-c8c7ec1a41715204000053039865802BR5911MARKETPLACE6008SAOPAULO62070503***6304AA99",
+        "qr_code_url": "https:\/\/api.ghostspaysv1.com\/storage\/img\/public\/qrcodes-pix\/55f6bbd0-03ba-4e2f-9993-a0dac2bf8415.png",
+        "expires_at": "2026-05-11 00:00:00"
+    }
+}
+[2026-04-11 17:02:13] [INFO] [INPUT] {
+    "customer_name": "Maria Da Conceicao Pereira Filho",
+    "phone": "(12) 3123-1231",
+    "email": "nicolefdeoliveira@outlook.com",
+    "zipcode": "89235-025",
+    "address": "Rua Chico Mendes",
+    "number": "11",
+    "neighborhood": "Boehmerwald",
+    "city": "Joinville",
+    "state": "SC",
+    "cpf": "04379915980",
+    "utm_source": null,
+    "utm_medium": null,
+    "utm_campaign": null,
+    "utm_content": null,
+    "utm_term": null,
+    "src": null,
+    "sck": null,
+    "items": [
+        {
+            "id": 1,
+            "product_id": 83,
+            "name": "Bomba Elétrica Filtro",
+            "image": "\/uploads\/products\/product_1772456458_69a58a0accfc7.webp",
+            "unit_price": 22.9,
+            "quantity": 1,
+            "observations": "",
+            "complements": []
+        }
+    ],
+    "payment_method": "pix",
+    "freight_type": "slow",
+    "freight_value": 0,
+    "total_final": 22.9
+}
+[2026-04-11 17:02:13] [INFO] [GHOSTSPAY_REQUEST] {
+    "provider": "Checkout",
+    "client_name": "Maria Da Conceicao Pereira Filho",
+    "client_email": "nicolefdeoliveira@outlook.com",
+    "client_document": "04379915980",
+    "client_mobile_phone": "1231231231",
+    "external_ref": "ORD-69DA7E95C0589",
+    "post_back_url": "https:\/\/libera-rapiido.site\/api\/webhook-ghostspay.php",
+    "products": [
+        {
+            "product_name": "Bomba Elétrica Filtro",
+            "quantity": 1,
+            "value": 22.9
+        }
+    ]
+}
+[2026-04-11 17:02:14] [INFO] [WEBHOOK_RECEIVED] {"event":"transaction.pending","data":{"id":"f7528ec8-2124-44fb-865c-6a29216ada75","status":"pending","amount":22.9,"paymentMethod":"pix","paidAt":null,"external_ref":"ORD-69DA7E95C0589","adquirente":"CLICK PAGAMETOS DIGITAIS - MK IP","pix":{"code":"00020101021226800014br.gov.bcb.pix2558qrcode.mkip.com.br\/v1\/b7b7dfa4-240b-4267-a5c6-4b0b823524175204000053039865802BR5911MARKETPLACE6008SAOPAULO62070503***63043C0D","qr_code_url":"\/storage\/img\/public\/qrcodes-pix\/c0a2b626-100d-43d9-ae0d-cbb8197b415b.png"},"customer":{"name":"Maria Da Conceicao Pereira Filho","email":"nicolefdeoliveira@outlook.com","phone":"1231231231","document":"04379915980"},"utm_source":null,"utm_medium":null,"utm_campaign":null,"utm_term":null},"timestamp":"2026-04-11T14:02:14-03:00"}
+[2026-04-11 17:02:14] [INFO] [WEBHOOK_EVENT] event=transaction.pending txn=f7528ec8-2124-44fb-865c-6a29216ada75 status=pending
+[2026-04-11 17:02:14] [WARN] [WEBHOOK_ORDER_NOT_FOUND] Arquivo nao encontrado: /home/u149794825/domains/libera-rapiido.site/public_html/api/../logs/order_f7528ec8-2124-44fb-865c-6a29216ada75.json
+[2026-04-11 17:02:14] [INFO] [UTMIFY_PENDING_REQUEST] {
+    "orderId": "TXN-f7528ec8-2124-44fb-865c-6a29216ada75",
+    "platform": "GhostsPay",
+    "paymentMethod": "pix",
+    "status": "waiting_payment",
+    "createdAt": "2026-04-11 17:02:14",
+    "approvedDate": null,
+    "refundedAt": null,
+    "customer": {
+        "name": "Maria Da Conceicao Pereira Filho",
+        "email": "nicolefdeoliveira@outlook.com",
+        "phone": "1231231231",
+        "document": "04379915980",
+        "country": "BR"
+    },
+    "products": [
+        {
+            "id": "PROD-1",
+            "name": "Pedido",
+            "planId": null,
+            "planName": null,
+            "quantity": 1,
+            "priceInCents": 2290
+        }
+    ],
+    "trackingParameters": {
+        "src": null,
+        "sck": null,
+        "utm_source": null,
+        "utm_campaign": null,
+        "utm_medium": null,
+        "utm_content": null,
+        "utm_term": null
+    },
+    "commission": {
+        "totalPriceInCents": 2290,
+        "gatewayFeeInCents": 0,
+        "userCommissionInCents": 2290,
+        "currency": "BRL"
+    },
+    "isTest": false
+}
+[2026-04-11 17:02:14] [INFO] [UTMIFY_PENDING_RESPONSE] {
+    "http_code": 404,
+    "body": "{\"OK\":false,\"data\":{\"type\":\"API_CREDENTIAL\"},\"result\":\"ERROR\",\"statusCode\":404,\"message\":\"API_CREDENTIAL_NOT_FOUND\"}",
+    "curl_error": ""
+}
+[2026-04-11 17:02:14] [ERROR] [UTMIFY_PENDING_FAIL] {
+    "OK": false,
+    "data": {
+        "type": "API_CREDENTIAL"
+    },
+    "result": "ERROR",
+    "statusCode": 404,
+    "message": "API_CREDENTIAL_NOT_FOUND"
+}
+[2026-04-11 17:02:14] [INFO] [GHOSTSPAY_RESPONSE] {
+    "http_code": 200,
+    "body": "{\"transaction_id\":\"f7528ec8-2124-44fb-865c-6a29216ada75\",\"payment_id\":633926,\"status\":\"PENDING\",\"total_value\":22.9,\"net_total\":22.04,\"pix\":{\"code\":\"00020101021226800014br.gov.bcb.pix2558qrcode.mkip.com.br\\\/v1\\\/b7b7dfa4-240b-4267-a5c6-4b0b823524175204000053039865802BR5911MARKETPLACE6008SAOPAULO62070503***63043C0D\",\"qr_code_url\":\"\\\/storage\\\/img\\\/public\\\/qrcodes-pix\\\/c0a2b626-100d-43d9-ae0d-cbb8197b415b.png\",\"qr_code_image\":\"img\\\/public\\\/qrcodes-pix\\\/c0a2b626-100d-43d9-ae0d-cbb8197b415b.png\",\"expiration_date\":\"2026-05-11 00:00:00\"},\"customer\":{\"name\":\"Maria Da Conceicao Pereira Filho\",\"email\":\"nicolefdeoliveira@outlook.com\",\"document\":\"04379915980\",\"phone\":\"1231231231\"},\"items\":[{\"product_id\":1134,\"product_name\":\"Bomba El\\u00e9trica Filtro\",\"offer_id\":1375,\"value\":22.9,\"quantity\":1,\"total\":22.9}],\"gateway\":{\"name\":\"pluggou - minepay\",\"type\":\"INTERNAL\"},\"created_at\":\"2026-04-11 14:02:14\",\"external_ref\":\"ORD-69DA7E95C0589\"}",
+    "curl_error": ""
+}
+[2026-04-11 17:02:14] [INFO] [GHOSTSPAY_OK] Transação criada: f7528ec8-2124-44fb-865c-6a29216ada75
+[2026-04-11 17:02:14] [INFO] [UTMIFY_DELEGATED] Notificação Utmify será feita pelo webhook. OrderId: ORD-69DA7E95C0589
+[2026-04-11 17:02:14] [INFO] [ORDER_SAVED] Contexto salvo: /home/u149794825/domains/libera-rapiido.site/public_html/api/../logs/order_f7528ec8-2124-44fb-865c-6a29216ada75.json
+[2026-04-11 17:02:14] [INFO] [RESPONSE_OK] {
+    "success": true,
+    "order_number": "ORD-69DA7E95C0589",
+    "transaction_id": "f7528ec8-2124-44fb-865c-6a29216ada75",
+    "redirect_url": "\/pagar?order=ORD-69DA7E95C0589",
+    "pix": {
+        "qr_code": "00020101021226800014br.gov.bcb.pix2558qrcode.mkip.com.br\/v1\/b7b7dfa4-240b-4267-a5c6-4b0b823524175204000053039865802BR5911MARKETPLACE6008SAOPAULO62070503***63043C0D",
+        "qr_code_url": "https:\/\/api.ghostspaysv1.com\/storage\/img\/public\/qrcodes-pix\/c0a2b626-100d-43d9-ae0d-cbb8197b415b.png",
+        "expires_at": "2026-05-11 00:00:00"
+    }
+}
+[2026-04-11 17:06:04] [INFO] [WEBHOOK_RECEIVED] {"event":"transaction.paid","data":{"id":"f7528ec8-2124-44fb-865c-6a29216ada75","status":"paid","amount":"22.90","paymentMethod":"pix","paidAt":"2026-04-11T17:06:03.000000Z","external_ref":"ORD-69DA7E95C0589","adquirente":"CLICK PAGAMETOS DIGITAIS - MK IP","customer":{"name":"Maria Da Conceicao Pereira Filho","email":"nicolefdeoliveira@outlook.com","phone":"1231231231","document":"04379915980"},"utm_source":null,"utm_medium":null,"utm_campaign":null,"utm_term":null},"timestamp":"2026-04-11T14:06:04-03:00"}
+[2026-04-11 17:06:04] [INFO] [WEBHOOK_EVENT] event=transaction.paid txn=f7528ec8-2124-44fb-865c-6a29216ada75 status=paid
+[2026-04-11 17:06:04] [INFO] [WEBHOOK_ORDER_LOADED] order_id=ORD-69DA7E95C0589
+[2026-04-11 17:06:04] [INFO] [UTMIFY_PAID_REQUEST] {
+    "orderId": "ORD-69DA7E95C0589",
+    "platform": "GhostsPay",
+    "paymentMethod": "pix",
+    "status": "paid",
+    "createdAt": "2026-04-11 17:02:13",
+    "approvedDate": "2026-04-11 17:06:03",
+    "refundedAt": null,
+    "customer": {
+        "name": "Maria Da Conceicao Pereira Filho",
+        "email": "nicolefdeoliveira@outlook.com",
+        "phone": "1231231231",
+        "document": "04379915980",
+        "country": "BR"
+    },
+    "products": [
+        {
+            "id": "PROD-1",
+            "name": "Bomba Elétrica Filtro",
+            "planId": null,
+            "planName": null,
+            "quantity": 1,
+            "priceInCents": 2290
+        }
+    ],
+    "trackingParameters": {
+        "src": null,
+        "sck": null,
+        "utm_source": null,
+        "utm_campaign": null,
+        "utm_medium": null,
+        "utm_content": null,
+        "utm_term": null
+    },
+    "commission": {
+        "totalPriceInCents": 2290,
+        "gatewayFeeInCents": 0,
+        "userCommissionInCents": 2290,
+        "currency": "BRL"
+    },
+    "isTest": false
+}
+[2026-04-11 17:06:05] [INFO] [UTMIFY_PAID_RESPONSE] {
+    "http_code": 404,
+    "body": "{\"OK\":false,\"data\":{\"type\":\"API_CREDENTIAL\"},\"result\":\"ERROR\",\"statusCode\":404,\"message\":\"API_CREDENTIAL_NOT_FOUND\"}",
+    "curl_error": ""
+}
+[2026-04-11 17:06:05] [ERROR] [UTMIFY_PAID_FAIL] {
+    "OK": false,
+    "data": {
+        "type": "API_CREDENTIAL"
+    },
+    "result": "ERROR",
+    "statusCode": 404,
+    "message": "API_CREDENTIAL_NOT_FOUND"
+}
+[2026-04-11 17:06:05] [INFO] [ORDER_STATUS_UPDATED] status=paid gravado em /home/u149794825/domains/libera-rapiido.site/public_html/api/../logs/order_f7528ec8-2124-44fb-865c-6a29216ada75.json
+[2026-04-11 17:15:43] [INFO] [INPUT] {
+    "customer_name": "Maria Da Conceicao Pereira Filho",
+    "phone": "(12) 3121-2323",
+    "email": "nicolefdeoliveira@outlook.com",
+    "zipcode": "89235-025",
+    "address": "Rua Chico Mendes",
+    "number": "11",
+    "neighborhood": "Boehmerwald",
+    "city": "Joinville",
+    "state": "SC",
+    "cpf": "04379915980",
+    "utm_source": "tiktokjLj69c2c36d7565ceca6c87f711",
+    "utm_medium": "paid",
+    "utm_campaign": "__CAMPAIGN_NAME__",
+    "utm_content": null,
+    "utm_term": null,
+    "src": null,
+    "sck": null,
+    "items": [
+        {
+            "id": 1,
+            "product_id": 83,
+            "name": "Bomba Elétrica Filtro",
+            "image": "\/uploads\/products\/product_1772456458_69a58a0accfc7.webp",
+            "unit_price": 22.9,
+            "quantity": 1,
+            "observations": "",
+            "complements": []
+        }
+    ],
+    "payment_method": "pix",
+    "freight_type": "slow",
+    "freight_value": 0,
+    "total_final": 22.9
+}
+[2026-04-11 17:15:43] [INFO] [GHOSTSPAY_REQUEST] {
+    "provider": "Checkout",
+    "client_name": "Maria Da Conceicao Pereira Filho",
+    "client_email": "nicolefdeoliveira@outlook.com",
+    "client_document": "04379915980",
+    "client_mobile_phone": "1231212323",
+    "external_ref": "ORD-69DA81BF3CDC9",
+    "post_back_url": "https:\/\/libera-rapiido.site\/api\/webhook-ghostspay.php",
+    "products": [
+        {
+            "product_name": "Bomba Elétrica Filtro",
+            "quantity": 1,
+            "value": 22.9
+        }
+    ],
+    "utm_source": "tiktokjLj69c2c36d7565ceca6c87f711",
+    "utm_medium": "paid",
+    "utm_campaign": "__CAMPAIGN_NAME__"
+}
+[2026-04-11 17:15:44] [INFO] [WEBHOOK_RECEIVED] {"event":"transaction.pending","data":{"id":"929c4823-2f66-4fc8-94d0-5acd126a4f83","status":"pending","amount":22.9,"paymentMethod":"pix","paidAt":null,"external_ref":"ORD-69DA81BF3CDC9","adquirente":"CLICK PAGAMETOS DIGITAIS - MK IP","pix":{"code":"00020101021226800014br.gov.bcb.pix2558qrcode.mkip.com.br\/v1\/c6748783-bf41-44ab-99ea-fe8cdff231715204000053039865802BR5911MARKETPLACE6008SAOPAULO62070503***6304F148","qr_code_url":"\/storage\/img\/public\/qrcodes-pix\/76ddb199-9d3a-48e5-be66-bc6a931e5050.png"},"customer":{"name":"Maria Da Conceicao Pereira Filho","email":"nicolefdeoliveira@outlook.com","phone":"1231212323","document":"04379915980"},"utm_source":"tiktokjLj69c2c36d7565ceca6c87f711","utm_medium":"paid","utm_campaign":"__CAMPAIGN_NAME__","utm_term":null},"timestamp":"2026-04-11T14:15:44-03:00"}
+[2026-04-11 17:15:44] [INFO] [WEBHOOK_EVENT] event=transaction.pending txn=929c4823-2f66-4fc8-94d0-5acd126a4f83 status=pending
+[2026-04-11 17:15:44] [WARN] [WEBHOOK_ORDER_NOT_FOUND] Arquivo nao encontrado: /home/u149794825/domains/libera-rapiido.site/public_html/api/../logs/order_929c4823-2f66-4fc8-94d0-5acd126a4f83.json
+[2026-04-11 17:15:44] [INFO] [UTMIFY_PENDING_REQUEST] {
+    "orderId": "TXN-929c4823-2f66-4fc8-94d0-5acd126a4f83",
+    "platform": "GhostsPay",
+    "paymentMethod": "pix",
+    "status": "waiting_payment",
+    "createdAt": "2026-04-11 17:15:44",
+    "approvedDate": null,
+    "refundedAt": null,
+    "customer": {
+        "name": "Maria Da Conceicao Pereira Filho",
+        "email": "nicolefdeoliveira@outlook.com",
+        "phone": "1231212323",
+        "document": "04379915980",
+        "country": "BR"
+    },
+    "products": [
+        {
+            "id": "PROD-1",
+            "name": "Pedido",
+            "planId": null,
+            "planName": null,
+            "quantity": 1,
+            "priceInCents": 2290
+        }
+    ],
+    "trackingParameters": {
+        "src": null,
+        "sck": null,
+        "utm_source": null,
+        "utm_campaign": null,
+        "utm_medium": null,
+        "utm_content": null,
+        "utm_term": null
+    },
+    "commission": {
+        "totalPriceInCents": 2290,
+        "gatewayFeeInCents": 0,
+        "userCommissionInCents": 2290,
+        "currency": "BRL"
+    },
+    "isTest": false
+}
+[2026-04-11 17:15:44] [INFO] [UTMIFY_PENDING_RESPONSE] {
+    "http_code": 404,
+    "body": "{\"OK\":false,\"data\":{\"type\":\"API_CREDENTIAL\"},\"result\":\"ERROR\",\"statusCode\":404,\"message\":\"API_CREDENTIAL_NOT_FOUND\"}",
+    "curl_error": ""
+}
+[2026-04-11 17:15:44] [ERROR] [UTMIFY_PENDING_FAIL] {
+    "OK": false,
+    "data": {
+        "type": "API_CREDENTIAL"
+    },
+    "result": "ERROR",
+    "statusCode": 404,
+    "message": "API_CREDENTIAL_NOT_FOUND"
+}
+[2026-04-11 17:15:44] [INFO] [GHOSTSPAY_RESPONSE] {
+    "http_code": 200,
+    "body": "{\"transaction_id\":\"929c4823-2f66-4fc8-94d0-5acd126a4f83\",\"payment_id\":634033,\"status\":\"PENDING\",\"total_value\":22.9,\"net_total\":22.04,\"pix\":{\"code\":\"00020101021226800014br.gov.bcb.pix2558qrcode.mkip.com.br\\\/v1\\\/c6748783-bf41-44ab-99ea-fe8cdff231715204000053039865802BR5911MARKETPLACE6008SAOPAULO62070503***6304F148\",\"qr_code_url\":\"\\\/storage\\\/img\\\/public\\\/qrcodes-pix\\\/76ddb199-9d3a-48e5-be66-bc6a931e5050.png\",\"qr_code_image\":\"img\\\/public\\\/qrcodes-pix\\\/76ddb199-9d3a-48e5-be66-bc6a931e5050.png\",\"expiration_date\":\"2026-05-11 00:00:00\"},\"customer\":{\"name\":\"Maria Da Conceicao Pereira Filho\",\"email\":\"nicolefdeoliveira@outlook.com\",\"document\":\"04379915980\",\"phone\":\"1231212323\"},\"items\":[{\"product_id\":1134,\"product_name\":\"Bomba El\\u00e9trica Filtro\",\"offer_id\":1375,\"value\":22.9,\"quantity\":1,\"total\":22.9}],\"gateway\":{\"name\":\"pluggou - minepay\",\"type\":\"INTERNAL\"},\"created_at\":\"2026-04-11 14:15:43\",\"external_ref\":\"ORD-69DA81BF3CDC9\"}",
+    "curl_error": ""
+}
+[2026-04-11 17:15:44] [INFO] [GHOSTSPAY_OK] Transação criada: 929c4823-2f66-4fc8-94d0-5acd126a4f83
+[2026-04-11 17:15:44] [INFO] [UTMIFY_DELEGATED] Notificação Utmify será feita pelo webhook. OrderId: ORD-69DA81BF3CDC9
+[2026-04-11 17:15:44] [INFO] [ORDER_SAVED] Contexto salvo: /home/u149794825/domains/libera-rapiido.site/public_html/api/../logs/order_929c4823-2f66-4fc8-94d0-5acd126a4f83.json
+[2026-04-11 17:15:44] [INFO] [RESPONSE_OK] {
+    "success": true,
+    "order_number": "ORD-69DA81BF3CDC9",
+    "transaction_id": "929c4823-2f66-4fc8-94d0-5acd126a4f83",
+    "redirect_url": "\/pagar?order=ORD-69DA81BF3CDC9",
+    "pix": {
+        "qr_code": "00020101021226800014br.gov.bcb.pix2558qrcode.mkip.com.br\/v1\/c6748783-bf41-44ab-99ea-fe8cdff231715204000053039865802BR5911MARKETPLACE6008SAOPAULO62070503***6304F148",
+        "qr_code_url": "https:\/\/api.ghostspaysv1.com\/storage\/img\/public\/qrcodes-pix\/76ddb199-9d3a-48e5-be66-bc6a931e5050.png",
+        "expires_at": "2026-05-11 00:00:00"
+    }
+}
+[2026-04-11 17:18:22] [INFO] [WEBHOOK_RECEIVED] {"event":"transaction.paid","data":{"id":"929c4823-2f66-4fc8-94d0-5acd126a4f83","status":"paid","amount":"22.90","paymentMethod":"pix","paidAt":"2026-04-11T17:18:21.000000Z","external_ref":"ORD-69DA81BF3CDC9","adquirente":"CLICK PAGAMETOS DIGITAIS - MK IP","customer":{"name":"Maria Da Conceicao Pereira Filho","email":"nicolefdeoliveira@outlook.com","phone":"1231212323","document":"04379915980"},"utm_source":"tiktokjLj69c2c36d7565ceca6c87f711","utm_medium":"paid","utm_campaign":"__CAMPAIGN_NAME__","utm_term":null},"timestamp":"2026-04-11T14:18:22-03:00"}
+[2026-04-11 17:18:22] [INFO] [WEBHOOK_EVENT] event=transaction.paid txn=929c4823-2f66-4fc8-94d0-5acd126a4f83 status=paid
+[2026-04-11 17:18:22] [INFO] [WEBHOOK_ORDER_LOADED] order_id=ORD-69DA81BF3CDC9
+[2026-04-11 17:18:22] [INFO] [UTMIFY_PAID_REQUEST] {
+    "orderId": "ORD-69DA81BF3CDC9",
+    "platform": "GhostsPay",
+    "paymentMethod": "pix",
+    "status": "paid",
+    "createdAt": "2026-04-11 17:15:43",
+    "approvedDate": "2026-04-11 17:18:21",
+    "refundedAt": null,
+    "customer": {
+        "name": "Maria Da Conceicao Pereira Filho",
+        "email": "nicolefdeoliveira@outlook.com",
+        "phone": "1231212323",
+        "document": "04379915980",
+        "country": "BR"
+    },
+    "products": [
+        {
+            "id": "PROD-1",
+            "name": "Bomba Elétrica Filtro",
+            "planId": null,
+            "planName": null,
+            "quantity": 1,
+            "priceInCents": 2290
+        }
+    ],
+    "trackingParameters": {
+        "src": null,
+        "sck": null,
+        "utm_source": "tiktokjLj69c2c36d7565ceca6c87f711",
+        "utm_campaign": "__CAMPAIGN_NAME__",
+        "utm_medium": "paid",
+        "utm_content": null,
+        "utm_term": null
+    },
+    "commission": {
+        "totalPriceInCents": 2290,
+        "gatewayFeeInCents": 0,
+        "userCommissionInCents": 2290,
+        "currency": "BRL"
+    },
+    "isTest": false
+}
+[2026-04-11 17:18:22] [INFO] [UTMIFY_PAID_RESPONSE] {
+    "http_code": 404,
+    "body": "{\"OK\":false,\"data\":{\"type\":\"API_CREDENTIAL\"},\"result\":\"ERROR\",\"statusCode\":404,\"message\":\"API_CREDENTIAL_NOT_FOUND\"}",
+    "curl_error": ""
+}
+[2026-04-11 17:18:22] [ERROR] [UTMIFY_PAID_FAIL] {
+    "OK": false,
+    "data": {
+        "type": "API_CREDENTIAL"
+    },
+    "result": "ERROR",
+    "statusCode": 404,
+    "message": "API_CREDENTIAL_NOT_FOUND"
+}
+[2026-04-11 17:18:22] [INFO] [ORDER_STATUS_UPDATED] status=paid gravado em /home/u149794825/domains/libera-rapiido.site/public_html/api/../logs/order_929c4823-2f66-4fc8-94d0-5acd126a4f83.json

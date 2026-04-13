@@ -1,0 +1,47 @@
+{
+    "order_id": "ORD-69DA7E95C0589",
+    "transaction_id": "f7528ec8-2124-44fb-865c-6a29216ada75",
+    "customer_name": "Maria Da Conceicao Pereira Filho",
+    "email": "nicolefdeoliveira@outlook.com",
+    "phone": "1231231231",
+    "cpf": "04379915980",
+    "payment_method": "pix",
+    "total_cents": 2290,
+    "total_final": 22.9,
+    "products": [
+        {
+            "id": "PROD-1",
+            "name": "Bomba Elétrica Filtro",
+            "planId": null,
+            "planName": null,
+            "quantity": 1,
+            "priceInCents": 2290
+        }
+    ],
+    "items_raw": [
+        {
+            "id": 1,
+            "product_id": 83,
+            "name": "Bomba Elétrica Filtro",
+            "image": "\/uploads\/products\/product_1772456458_69a58a0accfc7.webp",
+            "unit_price": 22.9,
+            "quantity": 1,
+            "observations": "",
+            "complements": []
+        }
+    ],
+    "utm_source": null,
+    "utm_medium": null,
+    "utm_campaign": null,
+    "utm_content": null,
+    "utm_term": null,
+    "src": null,
+    "sck": null,
+    "created_at": "2026-04-11 17:02:13",
+    "pix_code": "00020101021226800014br.gov.bcb.pix2558qrcode.mkip.com.br\/v1\/b7b7dfa4-240b-4267-a5c6-4b0b823524175204000053039865802BR5911MARKETPLACE6008SAOPAULO62070503***63043C0D",
+    "pix_qr_url": "https:\/\/api.ghostspaysv1.com\/storage\/img\/public\/qrcodes-pix\/c0a2b626-100d-43d9-ae0d-cbb8197b415b.png",
+    "pix_expires": "2026-05-11 00:00:00",
+    "payment_id": 633926,
+    "status": "paid",
+    "paid_at": "2026-04-11 17:06:03"
+}

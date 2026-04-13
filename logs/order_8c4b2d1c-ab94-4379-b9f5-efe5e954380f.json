@@ -1,0 +1,45 @@
+{
+    "order_id": "ORD-69DA67578CCA8",
+    "transaction_id": "8c4b2d1c-ab94-4379-b9f5-efe5e954380f",
+    "customer_name": "Maria Da Conceicao Pereira Filho",
+    "email": "nicolefdeoliveira@outlook.com",
+    "phone": "2131231231",
+    "cpf": "04379915980",
+    "payment_method": "pix",
+    "total_cents": 9190,
+    "total_final": 91.9,
+    "products": [
+        {
+            "id": "PROD-1",
+            "name": "BOTIJÃO 13KG COPAGAZ + ÁGUA 20L",
+            "planId": null,
+            "planName": null,
+            "quantity": 1,
+            "priceInCents": 9190
+        }
+    ],
+    "items_raw": [
+        {
+            "id": 1,
+            "product_id": 78,
+            "name": "BOTIJÃO 13KG COPAGAZ + ÁGUA 20L",
+            "image": "\/uploads\/products\/product_1772451899_69a5783b1eaff.webp",
+            "unit_price": 91.9,
+            "quantity": 1,
+            "observations": "",
+            "complements": []
+        }
+    ],
+    "utm_source": null,
+    "utm_medium": null,
+    "utm_campaign": null,
+    "utm_content": null,
+    "utm_term": null,
+    "src": null,
+    "sck": null,
+    "created_at": "2026-04-11 15:23:03",
+    "pix_code": "00020101021226800014br.gov.bcb.pix2558qrcode.mkip.com.br\/v1\/1cb57e8d-74c7-4bbe-9cc4-de0f86fd2b875204000053039865802BR5911MARKETPLACE6008SAOPAULO62070503***6304A835",
+    "pix_qr_url": "https:\/\/api.ghostspaysv1.com\/storage\/img\/public\/qrcodes-pix\/8cdedcdf-f733-4358-81c0-9045582ffdd2.png",
+    "pix_expires": "2026-05-11 00:00:00",
+    "payment_id": 633222
+}

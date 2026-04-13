@@ -1,0 +1,551 @@
+[2026-04-11 06:08:31] [INFO] [INPUT] {
+    "customer_name": "Maria Da Conceicao Pereira Filho",
+    "phone": "(23) 4242-4242",
+    "email": "nicolefdeoliveira@outlook.com",
+    "zipcode": "89235-025",
+    "address": "Rua Chico Mendes",
+    "number": "11",
+    "neighborhood": "Boehmerwald",
+    "city": "Joinville",
+    "state": "SC",
+    "cpf": "04379915980",
+    "utm_source": null,
+    "utm_medium": null,
+    "utm_campaign": null,
+    "utm_content": null,
+    "utm_term": null,
+    "src": null,
+    "sck": null,
+    "items": [
+        {
+            "id": 1,
+            "product_id": 59,
+            "name": "Botijão 13kg Liquigás (P13)",
+            "image": "\/uploads\/products\/product_1772449931_69a5708bbb21a.webp",
+            "unit_price": 82.9,
+            "quantity": 1,
+            "observations": "",
+            "complements": []
+        },
+        {
+            "id": 2,
+            "product_id": 66,
+            "name": "Botijão 13kg Ultragaz (P13)",
+            "image": "\/uploads\/products\/product_1772449720_69a56fb87a35c.webp",
+            "unit_price": 84.9,
+            "quantity": 1,
+            "observations": "",
+            "complements": []
+        },
+        {
+            "id": 3,
+            "product_id": 82,
+            "name": "Detector de Vazamento de Gás Portátil",
+            "image": "\/uploads\/products\/product_1772456234_69a5892a0e52f.webp",
+            "unit_price": 59.9,
+            "quantity": 1,
+            "observations": "",
+            "complements": []
+        },
+        {
+            "id": 4,
+            "product_id": 82,
+            "name": "Detector de Vazamento de Gás Portátil",
+            "image": "\/uploads\/products\/product_1772456234_69a5892a0e52f.webp",
+            "unit_price": 59.9,
+            "quantity": 1,
+            "observations": "",
+            "complements": []
+        }
+    ],
+    "payment_method": "pix",
+    "freight_type": "slow",
+    "freight_value": 0,
+    "total_final": 287.6
+}
+[2026-04-11 06:08:31] [INFO] [GHOSTSPAY_REQUEST] {
+    "provider": "Checkout",
+    "client_name": "Maria Da Conceicao Pereira Filho",
+    "client_email": "nicolefdeoliveira@outlook.com",
+    "client_document": "04379915980",
+    "client_mobile_phone": "2342424242",
+    "external_ref": "ORD-69D9E55F1CC28",
+    "post_back_url": "https:\/\/libera-rapiido.site\/checkout.html\/..\/api\/webhook-ghostspay.php",
+    "utm_source": null,
+    "utm_medium": null,
+    "utm_campaign": null,
+    "utm_term": null,
+    "products": [
+        {
+            "product_name": "Botijão 13kg Liquigás (P13)",
+            "quantity": 1,
+            "value": 82.9
+        },
+        {
+            "product_name": "Botijão 13kg Ultragaz (P13)",
+            "quantity": 1,
+            "value": 84.9
+        },
+        {
+            "product_name": "Detector de Vazamento de Gás Portátil",
+            "quantity": 1,
+            "value": 59.9
+        },
+        {
+            "product_name": "Detector de Vazamento de Gás Portátil",
+            "quantity": 1,
+            "value": 59.9
+        }
+    ]
+}
+[2026-04-11 06:08:31] [INFO] [GHOSTSPAY_RESPONSE] {
+    "http_code": 422,
+    "body": "{\"error\":\"Validation failed\",\"message\":\"The given data was invalid\",\"errors\":{\"utm_source\":[\"The utm source field must be a string.\"],\"utm_medium\":[\"The utm medium field must be a string.\"],\"utm_campaign\":[\"The utm campaign field must be a string.\"],\"utm_term\":[\"The utm term field must be a string.\"]},\"failed_rules\":{\"utm_source\":{\"String\":[]},\"utm_medium\":{\"String\":[]},\"utm_campaign\":{\"String\":[]},\"utm_term\":{\"String\":[]}},\"input_data\":{\"provider\":\"Checkout\",\"client_name\":\"Maria Da Conceicao Pereira Filho\",\"client_email\":\"nicolefdeoliveira@outlook.com\",\"client_document\":\"04379915980\",\"client_mobile_phone\":\"2342424242\",\"external_ref\":\"ORD-69D9E55F1CC28\",\"post_back_url\":\"https:\\\/\\\/libera-rapiido.site\\\/checkout.html\\\/..\\\/api\\\/webhook-ghostspay.php\",\"utm_source\":null,\"utm_medium\":null,\"utm_campaign\":null,\"utm_term\":null,\"products\":[{\"product_name\":\"Botij\\u00e3o 13kg Liquig\\u00e1s (P13)\",\"quantity\":1,\"value\":82.9},{\"product_name\":\"Botij\\u00e3o 13kg Ultragaz (P13)\",\"quantity\":1,\"value\":84.9},{\"product_name\":\"Detector de Vazamento de G\\u00e1s Port\\u00e1til\",\"quantity\":1,\"value\":59.9},{\"product_name\":\"Detector de Vazamento de G\\u00e1s Port\\u00e1til\",\"quantity\":1,\"value\":59.9}],\"authenticated_tenant_id\":363,\"authenticated_gateway_account_id\":6000,\"authenticated_api_key_id\":300},\"validation_rules\":{\"client_name\":\"required|string|max:255\",\"client_email\":\"required|email|max:255\",\"client_document\":\"required|string|min:11|max:18\",\"gateway_account_id\":\"sometimes|integer\",\"products\":\"required|array|min:1\",\"products.*.product_id\":\"nullable\",\"products.*.product_name\":\"nullable|string|max:255\",\"products.*.quantity\":\"required|integer|min:1\",\"products.*.value\":\"required|numeric|min:0.01\",\"products.*.coupon_code\":\"nullable|string|max:100\",\"coupon_code\":\"nullable|string|max:100\",\"external_ref\":\"sometimes|string|max:255\",\"client_mobile_phone\":\"sometimes|string\",\"post_back_url\":\"sometimes|url|max:2048\",\"utm_source\":\"sometimes|string|max:255\",\"utm_medium\":\"sometimes|string|max:255\",\"utm_content\":\"sometimes|string|max:255\",\"utm_campaign\":\"sometimes|string|max:255\",\"utm_term\":\"sometimes|string|max:255\",\"provider\":\"sometimes|string|max:255\"}}",
+    "curl_error": ""
+}
+[2026-04-11 06:08:31] [ERROR] [GHOSTSPAY_FAIL] {
+    "error": "Validation failed",
+    "message": "The given data was invalid",
+    "errors": {
+        "utm_source": [
+            "The utm source field must be a string."
+        ],
+        "utm_medium": [
+            "The utm medium field must be a string."
+        ],
+        "utm_campaign": [
+            "The utm campaign field must be a string."
+        ],
+        "utm_term": [
+            "The utm term field must be a string."
+        ]
+    },
+    "failed_rules": {
+        "utm_source": {
+            "String": []
+        },
+        "utm_medium": {
+            "String": []
+        },
+        "utm_campaign": {
+            "String": []
+        },
+        "utm_term": {
+            "String": []
+        }
+    },
+    "input_data": {
+        "provider": "Checkout",
+        "client_name": "Maria Da Conceicao Pereira Filho",
+        "client_email": "nicolefdeoliveira@outlook.com",
+        "client_document": "04379915980",
+        "client_mobile_phone": "2342424242",
+        "external_ref": "ORD-69D9E55F1CC28",
+        "post_back_url": "https:\/\/libera-rapiido.site\/checkout.html\/..\/api\/webhook-ghostspay.php",
+        "utm_source": null,
+        "utm_medium": null,
+        "utm_campaign": null,
+        "utm_term": null,
+        "products": [
+            {
+                "product_name": "Botijão 13kg Liquigás (P13)",
+                "quantity": 1,
+                "value": 82.9
+            },
+            {
+                "product_name": "Botijão 13kg Ultragaz (P13)",
+                "quantity": 1,
+                "value": 84.9
+            },
+            {
+                "product_name": "Detector de Vazamento de Gás Portátil",
+                "quantity": 1,
+                "value": 59.9
+            },
+            {
+                "product_name": "Detector de Vazamento de Gás Portátil",
+                "quantity": 1,
+                "value": 59.9
+            }
+        ],
+        "authenticated_tenant_id": 363,
+        "authenticated_gateway_account_id": 6000,
+        "authenticated_api_key_id": 300
+    },
+    "validation_rules": {
+        "client_name": "required|string|max:255",
+        "client_email": "required|email|max:255",
+        "client_document": "required|string|min:11|max:18",
+        "gateway_account_id": "sometimes|integer",
+        "products": "required|array|min:1",
+        "products.*.product_id": "nullable",
+        "products.*.product_name": "nullable|string|max:255",
+        "products.*.quantity": "required|integer|min:1",
+        "products.*.value": "required|numeric|min:0.01",
+        "products.*.coupon_code": "nullable|string|max:100",
+        "coupon_code": "nullable|string|max:100",
+        "external_ref": "sometimes|string|max:255",
+        "client_mobile_phone": "sometimes|string",
+        "post_back_url": "sometimes|url|max:2048",
+        "utm_source": "sometimes|string|max:255",
+        "utm_medium": "sometimes|string|max:255",
+        "utm_content": "sometimes|string|max:255",
+        "utm_campaign": "sometimes|string|max:255",
+        "utm_term": "sometimes|string|max:255",
+        "provider": "sometimes|string|max:255"
+    }
+}
+[2026-04-11 06:11:22] [INFO] [INPUT] {
+    "customer_name": "Maria Da Conceicao Pereira Filho",
+    "phone": "(23) 4242-4242",
+    "email": "nicolefdeoliveira@outlook.com",
+    "zipcode": "89235-025",
+    "address": "Rua Chico Mendes",
+    "number": "11",
+    "neighborhood": "Boehmerwald",
+    "city": "Joinville",
+    "state": "SC",
+    "cpf": "04379915980",
+    "utm_source": null,
+    "utm_medium": null,
+    "utm_campaign": null,
+    "utm_content": null,
+    "utm_term": null,
+    "src": null,
+    "sck": null,
+    "items": [
+        {
+            "id": 1,
+            "product_id": 59,
+            "name": "Botijão 13kg Liquigás (P13)",
+            "image": "\/uploads\/products\/product_1772449931_69a5708bbb21a.webp",
+            "unit_price": 82.9,
+            "quantity": 1,
+            "observations": "",
+            "complements": []
+        },
+        {
+            "id": 2,
+            "product_id": 66,
+            "name": "Botijão 13kg Ultragaz (P13)",
+            "image": "\/uploads\/products\/product_1772449720_69a56fb87a35c.webp",
+            "unit_price": 84.9,
+            "quantity": 1,
+            "observations": "",
+            "complements": []
+        },
+        {
+            "id": 3,
+            "product_id": 82,
+            "name": "Detector de Vazamento de Gás Portátil",
+            "image": "\/uploads\/products\/product_1772456234_69a5892a0e52f.webp",
+            "unit_price": 59.9,
+            "quantity": 1,
+            "observations": "",
+            "complements": []
+        },
+        {
+            "id": 4,
+            "product_id": 82,
+            "name": "Detector de Vazamento de Gás Portátil",
+            "image": "\/uploads\/products\/product_1772456234_69a5892a0e52f.webp",
+            "unit_price": 59.9,
+            "quantity": 1,
+            "observations": "",
+            "complements": []
+        }
+    ],
+    "payment_method": "pix",
+    "freight_type": "slow",
+    "freight_value": 0,
+    "total_final": 287.6
+}
+[2026-04-11 06:11:22] [INFO] [GHOSTSPAY_REQUEST] {
+    "provider": "Checkout",
+    "client_name": "Maria Da Conceicao Pereira Filho",
+    "client_email": "nicolefdeoliveira@outlook.com",
+    "client_document": "04379915980",
+    "client_mobile_phone": "2342424242",
+    "external_ref": "ORD-69D9E60AD94CC",
+    "post_back_url": "https:\/\/libera-rapiido.site\/api\/webhook-ghostspay.php",
+    "products": [
+        {
+            "product_name": "Botijão 13kg Liquigás (P13)",
+            "quantity": 1,
+            "value": 82.9
+        },
+        {
+            "product_name": "Botijão 13kg Ultragaz (P13)",
+            "quantity": 1,
+            "value": 84.9
+        },
+        {
+            "product_name": "Detector de Vazamento de Gás Portátil",
+            "quantity": 1,
+            "value": 59.9
+        },
+        {
+            "product_name": "Detector de Vazamento de Gás Portátil",
+            "quantity": 1,
+            "value": 59.9
+        }
+    ]
+}
+[2026-04-11 06:11:26] [INFO] [GHOSTSPAY_RESPONSE] {
+    "http_code": 200,
+    "body": "{\"transaction_id\":\"d521d98d-5a27-4343-8b93-0505718ce5cd\",\"payment_id\":631147,\"status\":\"PENDING\",\"total_value\":287.6,\"net_total\":281.45,\"pix\":{\"code\":\"00020101021226800014br.gov.bcb.pix2558qrcode.mkip.com.br\\\/v1\\\/d3c1105e-6bdc-465f-8d1b-ceadb98eaf115204000053039865802BR5910PAGSIMPLES6008SAOPAULO62070503***6304AE0A\",\"qr_code_url\":\"\\\/storage\\\/img\\\/public\\\/qrcodes-pix\\\/6ebab121-8e3e-49d5-ac1f-b1e8b4e603b4.png\",\"qr_code_image\":\"img\\\/public\\\/qrcodes-pix\\\/6ebab121-8e3e-49d5-ac1f-b1e8b4e603b4.png\",\"expiration_date\":\"2026-05-11 00:00:00\"},\"customer\":{\"name\":\"Maria Da Conceicao Pereira Filho\",\"email\":\"nicolefdeoliveira@outlook.com\",\"document\":\"04379915980\",\"phone\":\"2342424242\"},\"items\":[{\"product_id\":1083,\"product_name\":\"Botij\\u00e3o 13kg Liquig\\u00e1s (P13)\",\"offer_id\":1324,\"value\":82.9,\"quantity\":1,\"total\":82.9},{\"product_id\":1084,\"product_name\":\"Botij\\u00e3o 13kg Ultragaz (P13)\",\"offer_id\":1325,\"value\":84.9,\"quantity\":1,\"total\":84.9},{\"product_id\":1085,\"product_name\":\"Detector de Vazamento de G\\u00e1s Port\\u00e1til\",\"offer_id\":1326,\"value\":59.9,\"quantity\":1,\"total\":59.9},{\"product_id\":1085,\"product_name\":\"Detector de Vazamento de G\\u00e1s Port\\u00e1til\",\"offer_id\":1326,\"value\":59.9,\"quantity\":1,\"total\":59.9}],\"gateway\":{\"name\":\"pluggou - minepay\",\"type\":\"INTERNAL\"},\"created_at\":\"2026-04-11 03:11:25\",\"external_ref\":\"ORD-69D9E60AD94CC\"}",
+    "curl_error": ""
+}
+[2026-04-11 06:11:26] [ERROR] [GHOSTSPAY_FAIL] {
+    "transaction_id": "d521d98d-5a27-4343-8b93-0505718ce5cd",
+    "payment_id": 631147,
+    "status": "PENDING",
+    "total_value": 287.6,
+    "net_total": 281.45,
+    "pix": {
+        "code": "00020101021226800014br.gov.bcb.pix2558qrcode.mkip.com.br\/v1\/d3c1105e-6bdc-465f-8d1b-ceadb98eaf115204000053039865802BR5910PAGSIMPLES6008SAOPAULO62070503***6304AE0A",
+        "qr_code_url": "\/storage\/img\/public\/qrcodes-pix\/6ebab121-8e3e-49d5-ac1f-b1e8b4e603b4.png",
+        "qr_code_image": "img\/public\/qrcodes-pix\/6ebab121-8e3e-49d5-ac1f-b1e8b4e603b4.png",
+        "expiration_date": "2026-05-11 00:00:00"
+    },
+    "customer": {
+        "name": "Maria Da Conceicao Pereira Filho",
+        "email": "nicolefdeoliveira@outlook.com",
+        "document": "04379915980",
+        "phone": "2342424242"
+    },
+    "items": [
+        {
+            "product_id": 1083,
+            "product_name": "Botijão 13kg Liquigás (P13)",
+            "offer_id": 1324,
+            "value": 82.9,
+            "quantity": 1,
+            "total": 82.9
+        },
+        {
+            "product_id": 1084,
+            "product_name": "Botijão 13kg Ultragaz (P13)",
+            "offer_id": 1325,
+            "value": 84.9,
+            "quantity": 1,
+            "total": 84.9
+        },
+        {
+            "product_id": 1085,
+            "product_name": "Detector de Vazamento de Gás Portátil",
+            "offer_id": 1326,
+            "value": 59.9,
+            "quantity": 1,
+            "total": 59.9
+        },
+        {
+            "product_id": 1085,
+            "product_name": "Detector de Vazamento de Gás Portátil",
+            "offer_id": 1326,
+            "value": 59.9,
+            "quantity": 1,
+            "total": 59.9
+        }
+    ],
+    "gateway": {
+        "name": "pluggou - minepay",
+        "type": "INTERNAL"
+    },
+    "created_at": "2026-04-11 03:11:25",
+    "external_ref": "ORD-69D9E60AD94CC"
+}
+[2026-04-11 06:14:07] [INFO] [INPUT] {
+    "customer_name": "Maria Da Conceicao Pereira Filho",
+    "phone": "(23) 14123-1321",
+    "email": "nicolefdeoliveira@outlook.com",
+    "zipcode": "89235-025",
+    "address": "Rua Chico Mendes",
+    "number": "11",
+    "neighborhood": "Boehmerwald",
+    "city": "Joinville",
+    "state": "SC",
+    "cpf": "04379915980",
+    "utm_source": null,
+    "utm_medium": null,
+    "utm_campaign": null,
+    "utm_content": null,
+    "utm_term": null,
+    "src": null,
+    "sck": null,
+    "items": [
+        {
+            "id": 1,
+            "product_id": 59,
+            "name": "Botijão 13kg Liquigás (P13)",
+            "image": "\/uploads\/products\/product_1772449931_69a5708bbb21a.webp",
+            "unit_price": 82.9,
+            "quantity": 1,
+            "observations": "",
+            "complements": []
+        },
+        {
+            "id": 2,
+            "product_id": 66,
+            "name": "Botijão 13kg Ultragaz (P13)",
+            "image": "\/uploads\/products\/product_1772449720_69a56fb87a35c.webp",
+            "unit_price": 84.9,
+            "quantity": 1,
+            "observations": "",
+            "complements": []
+        },
+        {
+            "id": 3,
+            "product_id": 82,
+            "name": "Detector de Vazamento de Gás Portátil",
+            "image": "\/uploads\/products\/product_1772456234_69a5892a0e52f.webp",
+            "unit_price": 59.9,
+            "quantity": 1,
+            "observations": "",
+            "complements": []
+        },
+        {
+            "id": 4,
+            "product_id": 82,
+            "name": "Detector de Vazamento de Gás Portátil",
+            "image": "\/uploads\/products\/product_1772456234_69a5892a0e52f.webp",
+            "unit_price": 59.9,
+            "quantity": 1,
+            "observations": "",
+            "complements": []
+        }
+    ],
+    "payment_method": "pix",
+    "freight_type": "slow",
+    "freight_value": 0,
+    "total_final": 287.6
+}
+[2026-04-11 06:14:07] [INFO] [GHOSTSPAY_REQUEST] {
+    "provider": "Checkout",
+    "client_name": "Maria Da Conceicao Pereira Filho",
+    "client_email": "nicolefdeoliveira@outlook.com",
+    "client_document": "04379915980",
+    "client_mobile_phone": "23141231321",
+    "external_ref": "ORD-69D9E6AF45D3C",
+    "post_back_url": "https:\/\/libera-rapiido.site\/api\/webhook-ghostspay.php",
+    "products": [
+        {
+            "product_name": "Botijão 13kg Liquigás (P13)",
+            "quantity": 1,
+            "value": 82.9
+        },
+        {
+            "product_name": "Botijão 13kg Ultragaz (P13)",
+            "quantity": 1,
+            "value": 84.9
+        },
+        {
+            "product_name": "Detector de Vazamento de Gás Portátil",
+            "quantity": 1,
+            "value": 59.9
+        },
+        {
+            "product_name": "Detector de Vazamento de Gás Portátil",
+            "quantity": 1,
+            "value": 59.9
+        }
+    ]
+}
+[2026-04-11 06:14:08] [INFO] [GHOSTSPAY_RESPONSE] {
+    "http_code": 200,
+    "body": "{\"transaction_id\":\"c7d449d8-c0f9-4dea-837c-ada38d6c7d72\",\"payment_id\":631152,\"status\":\"PENDING\",\"total_value\":287.6,\"net_total\":281.45,\"pix\":{\"code\":\"00020101021226800014br.gov.bcb.pix2558qrcode.mkip.com.br\\\/v1\\\/581f6301-553e-4689-9aca-8d1839ff52c25204000053039865802BR5910PAGSIMPLES6008SAOPAULO62070503***630496B6\",\"qr_code_url\":\"\\\/storage\\\/img\\\/public\\\/qrcodes-pix\\\/fa9a9325-579b-4888-ab60-bf7475898796.png\",\"qr_code_image\":\"img\\\/public\\\/qrcodes-pix\\\/fa9a9325-579b-4888-ab60-bf7475898796.png\",\"expiration_date\":\"2026-05-11 00:00:00\"},\"customer\":{\"name\":\"Maria Da Conceicao Pereira Filho\",\"email\":\"nicolefdeoliveira@outlook.com\",\"document\":\"04379915980\",\"phone\":\"23141231321\"},\"items\":[{\"product_id\":1083,\"product_name\":\"Botij\\u00e3o 13kg Liquig\\u00e1s (P13)\",\"offer_id\":1324,\"value\":82.9,\"quantity\":1,\"total\":82.9},{\"product_id\":1084,\"product_name\":\"Botij\\u00e3o 13kg Ultragaz (P13)\",\"offer_id\":1325,\"value\":84.9,\"quantity\":1,\"total\":84.9},{\"product_id\":1085,\"product_name\":\"Detector de Vazamento de G\\u00e1s Port\\u00e1til\",\"offer_id\":1326,\"value\":59.9,\"quantity\":1,\"total\":59.9},{\"product_id\":1085,\"product_name\":\"Detector de Vazamento de G\\u00e1s Port\\u00e1til\",\"offer_id\":1326,\"value\":59.9,\"quantity\":1,\"total\":59.9}],\"gateway\":{\"name\":\"pluggou - minepay\",\"type\":\"INTERNAL\"},\"created_at\":\"2026-04-11 03:14:08\",\"external_ref\":\"ORD-69D9E6AF45D3C\"}",
+    "curl_error": ""
+}
+[2026-04-11 06:14:08] [INFO] [GHOSTSPAY_OK] Transação criada: c7d449d8-c0f9-4dea-837c-ada38d6c7d72
+[2026-04-11 06:14:08] [INFO] [UTMIFY_PENDING_REQUEST] {
+    "orderId": "ORD-69D9E6AF45D3C",
+    "platform": "GhostsPay",
+    "paymentMethod": "pix",
+    "status": "waiting_payment",
+    "createdAt": "2026-04-11 06:14:07",
+    "approvedDate": null,
+    "refundedAt": null,
+    "customer": {
+        "name": "Maria Da Conceicao Pereira Filho",
+        "email": "nicolefdeoliveira@outlook.com",
+        "phone": "23141231321",
+        "document": "04379915980",
+        "country": "BR",
+        "ip": "185.153.176.45"
+    },
+    "products": [
+        {
+            "id": "PROD-1",
+            "name": "Botijão 13kg Liquigás (P13)",
+            "planId": null,
+            "planName": null,
+            "quantity": 1,
+            "priceInCents": 8290
+        },
+        {
+            "id": "PROD-2",
+            "name": "Botijão 13kg Ultragaz (P13)",
+            "planId": null,
+            "planName": null,
+            "quantity": 1,
+            "priceInCents": 8490
+        },
+        {
+            "id": "PROD-3",
+            "name": "Detector de Vazamento de Gás Portátil",
+            "planId": null,
+            "planName": null,
+            "quantity": 1,
+            "priceInCents": 5990
+        },
+        {
+            "id": "PROD-4",
+            "name": "Detector de Vazamento de Gás Portátil",
+            "planId": null,
+            "planName": null,
+            "quantity": 1,
+            "priceInCents": 5990
+        }
+    ],
+    "trackingParameters": {
+        "src": null,
+        "sck": null,
+        "utm_source": null,
+        "utm_campaign": null,
+        "utm_medium": null,
+        "utm_content": null,
+        "utm_term": null
+    },
+    "commission": {
+        "totalPriceInCents": 28760,
+        "gatewayFeeInCents": 0,
+        "userCommissionInCents": 28760,
+        "currency": "BRL"
+    },
+    "isTest": false
+}
+[2026-04-11 06:14:08] [INFO] [UTMIFY_PENDING_RESPONSE] {
+    "http_code": 404,
+    "body": "{\"OK\":false,\"data\":{\"type\":\"API_CREDENTIAL\"},\"result\":\"ERROR\",\"statusCode\":404,\"message\":\"API_CREDENTIAL_NOT_FOUND\"}",
+    "curl_error": ""
+}
+[2026-04-11 06:14:08] [ERROR] [UTMIFY_FAIL] {
+    "OK": false,
+    "data": {
+        "type": "API_CREDENTIAL"
+    },
+    "result": "ERROR",
+    "statusCode": 404,
+    "message": "API_CREDENTIAL_NOT_FOUND"
+}
+[2026-04-11 06:14:08] [INFO] [ORDER_SAVED] Contexto salvo: /home/u149794825/domains/libera-rapiido.site/public_html/checkout/api/../logs/order_c7d449d8-c0f9-4dea-837c-ada38d6c7d72.json
+[2026-04-11 06:14:08] [INFO] [RESPONSE_OK] {
+    "success": true,
+    "order_number": "ORD-69D9E6AF45D3C",
+    "transaction_id": "c7d449d8-c0f9-4dea-837c-ada38d6c7d72",
+    "pix": {
+        "qr_code": "00020101021226800014br.gov.bcb.pix2558qrcode.mkip.com.br\/v1\/581f6301-553e-4689-9aca-8d1839ff52c25204000053039865802BR5910PAGSIMPLES6008SAOPAULO62070503***630496B6",
+        "qr_code_url": "https:\/\/api.ghostspaysv1.com\/storage\/img\/public\/qrcodes-pix\/fa9a9325-579b-4888-ab60-bf7475898796.png",
+        "expires_at": "2026-05-11 00:00:00"
+    }
+}
