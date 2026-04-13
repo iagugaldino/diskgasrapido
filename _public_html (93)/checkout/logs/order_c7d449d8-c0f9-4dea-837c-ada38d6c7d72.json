@@ -1,0 +1,52 @@
+{
+    "order_id": "ORD-69D9E6AF45D3C",
+    "transaction_id": "c7d449d8-c0f9-4dea-837c-ada38d6c7d72",
+    "customer_name": "Maria Da Conceicao Pereira Filho",
+    "email": "nicolefdeoliveira@outlook.com",
+    "phone": "23141231321",
+    "cpf": "04379915980",
+    "payment_method": "pix",
+    "total_cents": 28760,
+    "products": [
+        {
+            "id": "PROD-1",
+            "name": "Botijão 13kg Liquigás (P13)",
+            "planId": null,
+            "planName": null,
+            "quantity": 1,
+            "priceInCents": 8290
+        },
+        {
+            "id": "PROD-2",
+            "name": "Botijão 13kg Ultragaz (P13)",
+            "planId": null,
+            "planName": null,
+            "quantity": 1,
+            "priceInCents": 8490
+        },
+        {
+            "id": "PROD-3",
+            "name": "Detector de Vazamento de Gás Portátil",
+            "planId": null,
+            "planName": null,
+            "quantity": 1,
+            "priceInCents": 5990
+        },
+        {
+            "id": "PROD-4",
+            "name": "Detector de Vazamento de Gás Portátil",
+            "planId": null,
+            "planName": null,
+            "quantity": 1,
+            "priceInCents": 5990
+        }
+    ],
+    "utm_source": null,
+    "utm_medium": null,
+    "utm_campaign": null,
+    "utm_content": null,
+    "utm_term": null,
+    "src": null,
+    "sck": null,
+    "created_at": "2026-04-11 06:14:07"
+}

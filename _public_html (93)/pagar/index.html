@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pagamento PIX</title>
+    <!-- Biblioteca para gerar QR Code localmente a partir do código PIX -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+    <style>
+        * { margin:0; padding:0; box-sizing:border-box; font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Helvetica Neue',Arial,sans-serif; }
+        body { background:#F5F5F5; }
+        .container { max-width:680px; margin:0 auto; background:#fff; min-height:100vh; }
+
+        /* Header */
+        .header { background:#EF4444; color:#fff; padding:13px 16px; display:flex; align-items:center; justify-content:center; position:relative; }
+        .back-arrow { position:absolute; left:14px; color:#fff; text-decoration:none; display:flex; align-items:center; }
+        .header-title { font-size:17px; font-weight:700; }
+
+        /* Content */
+        .content { padding:24px 20px; background:#F5F5F5; }
+
+        /* PIX Logo */
+        .pix-logo { text-align:center; margin-bottom:20px; }
+        .pix-logo img { width:140px; height:auto; }
+
+        /* Title */
+        .title { font-size:18px; font-weight:700; color:#1f2937; text-align:center; margin-bottom:8px; }
+        .description { font-size:14px; color:#6b7280; text-align:center; line-height:1.5; margin-bottom:20px; }
+
+        /* QR Code */
+        .qr-wrap { text-align:center; margin-bottom:18px; }
+        .qr-box { display:inline-block; background:#fff; border-radius:12px; padding:14px; box-shadow:0 2px 8px rgba(0,0,0,.1); }
+        .qr-box canvas, .qr-box img { display:block; border-radius:6px; }
+        .qr-placeholder { width:200px; height:200px; display:flex; align-items:center; justify-content:center; background:#f3f4f6; border-radius:6px; }
+
+        /* Pix code box */
+        .pix-code-box { background:#fff; border:2px dashed #d1d5db; border-radius:10px; padding:14px 16px; display:flex; align-items:center; gap:12px; margin-bottom:12px; cursor:pointer; transition:border-color .2s; }
+        .pix-code-box:hover { border-color:#10b981; }
+        .pix-code-text { font-family:monospace; font-size:11.5px; color:#374151; word-break:break-all; flex:1; line-height:1.5; }
+        .copy-icon { flex-shrink:0; color:#9ca3af; }
+
+        /* Expiry */
+        .expiry { font-size:13px; color:#6b7280; text-align:center; margin-bottom:20px; }
+
+        /* Copy button */
+        .copy-btn { background:#10b981; color:#fff; border:none; border-radius:10px; padding:15px; width:100%; font-size:16px; font-weight:700; cursor:pointer; margin-bottom:14px; transition:background .2s; }
+        .copy-btn:active, .copy-btn.copied { background:#059669; }
+
+        /* Comprovante */
+        .comprovante-aviso { font-size:13px; color:#ef4444; text-align:center; margin-bottom:10px; line-height:1.5; }
+        .comprovante-btn { background:#EF4444; color:#fff; border:none; border-radius:10px; padding:14px; width:100%; font-size:15px; font-weight:700; cursor:pointer; display:flex; align-items:center; justify-content:center; gap:8px; margin-bottom:20px; transition:background .2s; }
+        .comprovante-btn:active { background:#dc2626; }
+
+        /* Order info */
+        .order-info { background:#fff; border-radius:12px; padding:16px; margin-bottom:16px; }
+        .order-row { display:flex; align-items:center; gap:12px; padding-bottom:14px; border-bottom:1px solid #f3f4f6; margin-bottom:14px; }
+        .order-icon { width:36px; height:36px; background:#ef4444; border-radius:8px; display:flex; align-items:center; justify-content:center; color:#fff; flex-shrink:0; }
+        .order-label { font-size:11px; color:#9ca3af; margin-bottom:2px; }
+        .order-val { font-size:14px; font-weight:600; color:#1f2937; }
+        .total-row { display:flex; justify-content:space-between; align-items:center; padding-bottom:14px; border-bottom:1px solid #f3f4f6; }
+        .total-label { font-size:15px; font-weight:700; color:#1f2937; }
+        .total-value { font-size:18px; font-weight:800; color:#1f2937; }
+
+        /* Items toggle */
+        .toggle-items { display:flex; justify-content:space-between; align-items:center; padding-top:14px; color:#6b7280; font-size:14px; cursor:pointer; }
+        .toggle-items svg { transition:transform .3s; }
+        .toggle-items.open svg { transform:rotate(180deg); }
+        .items-list { max-height:0; overflow:hidden; transition:max-height .3s ease; }
+        .items-list.show { max-height:600px; padding-top:12px; }
+        .item-row { display:flex; gap:12px; padding:10px 0; border-top:1px solid #f3f4f6; }
+        .item-img { width:50px; height:50px; object-fit:cover; border-radius:6px; flex-shrink:0; }
+        .item-ph { width:50px; height:50px; background:#e5e7eb; border-radius:6px; flex-shrink:0; }
+        .item-name { font-size:14px; font-weight:600; color:#1f2937; margin-bottom:2px; }
+        .item-price { font-size:13px; color:#6b7280; }
+        .item-qty { font-size:12px; color:#9ca3af; }
+
+        /* Security */
+        .security { display:flex; align-items:center; justify-content:center; gap:6px; padding:18px 0; }
+        .security svg { color:#9ca3af; }
+        .security span { font-size:12px; color:#9ca3af; }
+
+        /* Loading */
+        .loading { text-align:center; padding:60px 20px; }
+        .spinner { border:3px solid #f3f4f6; border-top-color:#EF4444; border-radius:50%; width:40px; height:40px; animation:spin 1s linear infinite; margin:0 auto 14px; }
+        @keyframes spin { to { transform:rotate(360deg); } }
+        .loading-text { font-size:14px; color:#6b7280; }
+
+        /* Error */
+        .error-box { text-align:center; padding:40px 20px; }
+
+        /* Modal comprovante */
+        #modal-comp { display:none; position:fixed; inset:0; background:rgba(0,0,0,.6); z-index:9999; align-items:center; justify-content:center; padding:20px; }
+        #modal-comp.open { display:flex; }
+        .modal-inner { background:#fff; border-radius:16px; padding:28px 22px; max-width:360px; width:100%; text-align:center; }
+        .upload-area { border:2px dashed #d1d5db; border-radius:10px; padding:24px 16px; cursor:pointer; margin-bottom:14px; transition:border-color .2s; }
+        .upload-area:hover { border-color:#10b981; }
+    </style>
+    <!-- Meta Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '960801736338286');
+fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=960801736338286&ev=PageView&noscript=1"
+/></noscript><script
+  src="https://cdn.utmify.com.br/scripts/utms/latest.js"
+  data-utmify-prevent-xcod-sck
+  data-utmify-prevent-subids
+  async
+  defer
+></script><script>
+  window.pixelId = "69da84072fd82ecf1b1c71b5";
+  var a = document.createElement("script");
+  a.setAttribute("async", "");
+  a.setAttribute("defer", "");
+  a.setAttribute("src", "https://cdn.utmify.com.br/scripts/pixel/pixel.js");
+  document.head.appendChild(a);
+</script>
+<!-- End Meta Pixel Code -->
+</head>
+<body>
+<div class="container">
+
+    <!-- Header -->
+    <div class="header">
+        <a href="javascript:history.back()" class="back-arrow">
+            <svg width="22" height="22" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M15 18l-6-6 6-6"/></svg>
+        </a>
+        <span class="header-title">PAGAMENTO</span>
+    </div>
+
+    <!-- Loading -->
+    <div class="loading" id="loader">
+        <div class="spinner"></div>
+        <div class="loading-text">Carregando...</div>
+    </div>
+
+    <!-- Error -->
+    <div class="error-box" id="error-box" style="display:none;">
+        <div style="font-size:40px;margin-bottom:12px;">😕</div>
+        <div style="font-size:16px;font-weight:700;color:#1f2937;margin-bottom:8px;">Dados não encontrados</div>
+        <div style="font-size:14px;color:#6b7280;margin-bottom:20px;">Não foi possível carregar os dados do pagamento.</div>
+        <a href="/checkout.html" style="background:#ef4444;color:#fff;border-radius:10px;padding:12px 24px;font-size:15px;font-weight:700;text-decoration:none;display:inline-block;">Voltar ao checkout</a>
+    </div>
+
+    <!-- Content -->
+    <div class="content" id="content" style="display:none;">
+
+        <!-- Logo PIX -->
+        <div class="pix-logo">
+            <img src="https://www.climbmarcas.com.br/wp-content/uploads/2020/10/logo_pix.png.webp" alt="PIX" onerror="this.style.display='none'">
+        </div>
+
+        <div class="title">Pedido aguardando pagamento</div>
+        <div class="description">Escaneie o QR Code ou copie o código abaixo<br>para pagar via PIX em qualquer banco.</div>
+
+        <!-- QR Code -->
+        <div class="qr-wrap">
+            <div class="qr-box">
+                <div id="qr-placeholder" class="qr-placeholder">
+                    <div class="spinner" style="width:28px;height:28px;border-width:3px;margin:0 auto;"></div>
+                </div>
+                <div id="qr-canvas" style="display:none;"></div>
+            </div>
+        </div>
+
+        <!-- Código copia e cola -->
+        <div class="pix-code-box" onclick="copyCode()">
+            <div class="pix-code-text" id="pix-code">—</div>
+            <svg class="copy-icon" width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
+                <rect x="9" y="9" width="13" height="13" rx="2"/>
+                <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/>
+            </svg>
+        </div>
+
+        <!-- Validade -->
+        <div class="expiry" id="pix-expiry"></div>
+
+        <!-- Botão copiar -->
+        <button class="copy-btn" id="copy-btn" onclick="copyCode()">Copiar código PIX</button>
+
+        <!-- Comprovante -->
+        <p class="comprovante-aviso">Caso seu pagamento não seja confirmado automaticamente em até 2 minutos, envie seu comprovante para liberação do pedido.</p>
+        <button class="comprovante-btn" onclick="abrirModal()">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"><path fill="#fff" d="m19.352 7.617l-3.96-3.563c-1.127-1.015-1.69-1.523-2.383-1.788L13 5c0 2.357 0 3.536.732 4.268S15.643 10 18 10h3.58c-.362-.704-1.012-1.288-2.228-2.383"/><path fill="#fff" fill-rule="evenodd" d="M10 22h4c3.771 0 5.657 0 6.828-1.172S22 17.771 22 14v-.437c0-.873 0-1.529-.043-2.063h-4.052c-1.097 0-2.067 0-2.848-.105c-.847-.114-1.694-.375-2.385-1.066c-.692-.692-.953-1.539-1.067-2.386c-.105-.781-.105-1.75-.105-2.848l.01-2.834q0-.124.02-.244C11.121 2 10.636 2 10.03 2C6.239 2 4.343 2 3.172 3.172C2 4.343 2 6.229 2 10v4c0 3.771 0 5.657 1.172 6.828S6.229 22 10 22m-.987-9.047a.75.75 0 0 0-1.026 0l-2 1.875a.75.75 0 0 0 1.026 1.094l.737-.69V18.5a.75.75 0 0 0 1.5 0v-3.269l.737.691a.75.75 0 0 0 1.026-1.094z" clip-rule="evenodd"/></svg>
+            Enviar comprovante
+        </button>
+
+        <!-- Order info -->
+        <div class="order-info">
+            <div class="order-row">
+                <div class="order-icon">
+                    <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24"><path d="M3.045 11.75c.126.714.303 1.541.51 2.507l.428 2c.487 2.273.731 3.409 1.556 4.076S7.526 21 9.85 21h4.3c2.324 0 3.486 0 4.31-.667c.826-.667 1.07-1.803 1.556-4.076l.429-2c.207-.966.384-1.793.51-2.507z" opacity=".5"/><path d="M8.33 2.665a.75.75 0 0 1 1.341.67l-1.835 3.67Q8.56 7 9.422 7h5.156q.863-.001 1.586.005l-1.835-3.67a.75.75 0 0 1 1.342-.67l2.201 4.402c1.353.104 2.202.37 2.75 1.047c.436.539.576 1.209.525 2.136H21q.075 0 .146.014a13 13 0 0 1-.19 1.486H3.045a13 13 0 0 1-.192-1.486A1 1 0 0 1 3 10.25h-.147c-.051-.927.09-1.597.525-2.136c.548-.678 1.397-.943 2.75-1.047z"/></svg>
+                </div>
+                <div>
+                    <div class="order-label">Nº do pedido</div>
+                    <div class="order-val" id="order-number">—</div>
+                </div>
+            </div>
+
+            <div class="total-row">
+                <span class="total-label">Total</span>
+                <span class="total-value" id="order-total">—</span>
+            </div>
+
+            <div class="toggle-items" id="toggle-items" onclick="toggleItems()">
+                <span>Ver itens do pedido</span>
+                <svg width="18" height="18" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
+            </div>
+
+            <div class="items-list" id="items-list"></div>
+        </div>
+
+        <!-- Security -->
+        <div class="security">
+            <svg width="14" height="14" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2"/><path stroke-linecap="round" stroke-linejoin="round" d="M7 11V7a5 5 0 0110 0v4"/></svg>
+            <span>Pagamento 100% seguro via PIX</span>
+        </div>
+
+    </div><!-- /content -->
+</div><!-- /container -->
+
+<!-- Modal Comprovante -->
+<div id="modal-comp">
+    <div class="modal-inner">
+        <div style="font-size:28px;margin-bottom:10px;">📄</div>
+        <div style="font-size:16px;font-weight:800;color:#1f2937;margin-bottom:6px;">Enviar Comprovante</div>
+        <div style="font-size:12.5px;color:#6b7280;line-height:1.6;margin-bottom:18px;">Caso seu pagamento não seja confirmado automaticamente, envie o comprovante para liberação do pedido.</div>
+        <div class="upload-area" id="upload-area" onclick="document.getElementById('file-input').click()">
+            <div id="upload-placeholder">
+                <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="none" stroke="#9ca3af" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="margin:0 auto 8px;display:block;"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
+                <div style="font-size:13px;color:#9ca3af;">Clique para escolher o arquivo</div>
+                <div style="font-size:11px;color:#d1d5db;margin-top:4px;">JPG, PNG ou PDF</div>
+            </div>
+            <div id="upload-preview" style="display:none;">
+                <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="none" stroke="#10b981" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin:0 auto 6px;display:block;"><polyline points="20 6 9 17 4 12"/></svg>
+                <div id="upload-fname" style="font-size:12px;color:#374151;font-weight:600;word-break:break-all;"></div>
+            </div>
+        </div>
+        <input type="file" id="file-input" accept="image/*,.pdf" style="display:none;" onchange="previewFile(this)">
+        <div id="upload-err" style="display:none;font-size:12px;color:#ef4444;margin-bottom:10px;"></div>
+        <button onclick="enviarComprovante()" id="btn-enviar" style="width:100%;background:#10b981;color:#fff;border:none;border-radius:10px;padding:12px;font-size:14px;font-weight:700;cursor:pointer;margin-bottom:10px;">Enviar comprovante</button>
+        <button onclick="fecharModal()" style="width:100%;background:#fff;color:#6b7280;border:1.5px solid #e5e7eb;border-radius:10px;padding:10px;font-size:13px;font-weight:600;cursor:pointer;">Cancelar</button>
+    </div>
+</div>
+
+<script>
+// ── Lê dados do PIX do localStorage ──────────────────────────────
+let pixData = null;
+let orderNumber = '';
+
+function fmt(v) { return 'R$ ' + parseFloat(v).toFixed(2).replace('.', ','); }
+
+function esc(s) {
+    return String(s || '').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+}
+
+function loadData() {
+    try {
+        const raw = localStorage.getItem('pix_data');
+        if (!raw) throw new Error('sem dados');
+        pixData = JSON.parse(raw);
+    } catch(e) {
+        console.error('Erro ao ler pix_data:', e);
+        document.getElementById('loader').style.display = 'none';
+        document.getElementById('error-box').style.display = 'block';
+        return;
+    }
+
+    orderNumber = pixData.order_number || '';
+
+    // QR Code — gerado localmente a partir do código PIX (não depende da URL da GhostsPay)
+    const pixCode = pixData.qr_code || '';
+    if (pixCode) {
+        try {
+            const placeholder = document.getElementById('qr-placeholder');
+            const canvasWrap  = document.getElementById('qr-canvas');
+            new QRCode(canvasWrap, {
+                text:         pixCode,
+                width:        200,
+                height:       200,
+                colorDark:    '#000000',
+                colorLight:   '#ffffff',
+                correctLevel: QRCode.CorrectLevel.M,
+            });
+            placeholder.style.display = 'none';
+            canvasWrap.style.display  = 'block';
+        } catch(e) {
+            console.error('Erro ao gerar QR Code:', e);
+            document.getElementById('qr-placeholder').innerHTML =
+                '<span style="color:#9ca3af;font-size:13px;">QR Code indisponível</span>';
+        }
+    } else {
+        document.getElementById('qr-placeholder').innerHTML =
+            '<span style="color:#9ca3af;font-size:13px;">QR Code indisponível</span>';
+    }
+
+    // Código copia e cola
+    document.getElementById('pix-code').textContent = pixData.qr_code || 'Código indisponível';
+
+    // Validade
+    if (pixData.expires_at) {
+        const d = new Date(pixData.expires_at);
+        if (!isNaN(d)) {
+            const formatted = d.toLocaleDateString('pt-BR') + ' às ' + d.toLocaleTimeString('pt-BR', {hour:'2-digit', minute:'2-digit'});
+            document.getElementById('pix-expiry').textContent = 'Pague até: ' + formatted;
+        }
+    }
+
+    // Pedido
+    document.getElementById('order-number').textContent = '#' + orderNumber;
+    document.getElementById('order-total').textContent = fmt(pixData.total || 0);
+
+    // Itens
+    const items = pixData.items || [];
+    const listEl = document.getElementById('items-list');
+    if (items.length > 0) {
+        listEl.innerHTML = items.map(item => {
+            const imgTag = item.image
+                ? `<img src="${esc(item.image)}" alt="" class="item-img" onerror="this.style.display='none'">`
+                : `<div class="item-ph"></div>`;
+            return `<div class="item-row">
+                ${imgTag}
+                <div>
+                    <div class="item-name">${esc(item.name)}</div>
+                    <div class="item-price">${fmt(item.unit_price || 0)}</div>
+                    <div class="item-qty">Qtd: ${item.quantity || 1}</div>
+                </div>
+            </div>`;
+        }).join('');
+    } else {
+        document.getElementById('toggle-items').style.display = 'none';
+    }
+
+    // Mostra conteúdo
+    document.getElementById('loader').style.display = 'none';
+    document.getElementById('content').style.display = 'block';
+
+    // Inicia verificação de status
+    startStatusCheck();
+}
+
+// ── Copiar código ────────────────────────────────────────────────
+function copyCode() {
+    const code = (pixData && pixData.qr_code) ? pixData.qr_code : '';
+    if (!code) { alert('Código PIX não disponível.'); return; }
+
+    navigator.clipboard.writeText(code).then(() => {
+        const btn = document.getElementById('copy-btn');
+        btn.classList.add('copied');
+        btn.textContent = '✅ Código copiado!';
+        setTimeout(() => { btn.classList.remove('copied'); btn.textContent = 'Copiar código PIX'; }, 3000);
+    }).catch(() => {
+        const ta = document.createElement('textarea');
+        ta.value = code;
+        document.body.appendChild(ta);
+        ta.select();
+        document.execCommand('copy');
+        document.body.removeChild(ta);
+        const btn = document.getElementById('copy-btn');
+        btn.textContent = '✅ Código copiado!';
+        setTimeout(() => btn.textContent = 'Copiar código PIX', 3000);
+    });
+}
+
+// ── Toggle itens ─────────────────────────────────────────────────
+function toggleItems() {
+    const list = document.getElementById('items-list');
+    const toggle = document.getElementById('toggle-items');
+    list.classList.toggle('show');
+    toggle.classList.toggle('open');
+}
+
+// ── Verificação de status (polling) ──────────────────────────────
+let checkIv = null;
+
+async function checkStatus() {
+    if (!orderNumber) return;
+    try {
+        const r = await fetch('/api/check-payment-status.php?order=' + encodeURIComponent(orderNumber));
+        const d = await r.json();
+        if (d.paid) {
+            clearInterval(checkIv);
+            // Redireciona para confirmação — pix_data ainda está no localStorage
+            // A página de confirmação exibe os dados e limpa depois
+            window.location.href = '/pedido-confirmado?order=' + encodeURIComponent(orderNumber);
+        }
+    } catch(e) { /* silencioso */ }
+}
+
+function startStatusCheck() {
+    checkStatus();
+    checkIv = setInterval(checkStatus, 10000);
+}
+
+window.addEventListener('beforeunload', () => { if(checkIv) clearInterval(checkIv); });
+
+// ── Comprovante ───────────────────────────────────────────────────
+function abrirModal() { document.getElementById('modal-comp').classList.add('open'); }
+function fecharModal() { document.getElementById('modal-comp').classList.remove('open'); }
+
+function previewFile(input) {
+    if (!input.files || !input.files[0]) return;
+    document.getElementById('upload-placeholder').style.display = 'none';
+    document.getElementById('upload-preview').style.display = 'block';
+    document.getElementById('upload-fname').textContent = input.files[0].name;
+    document.getElementById('upload-area').style.borderColor = '#10b981';
+    document.getElementById('upload-err').style.display = 'none';
+}
+
+async function enviarComprovante() {
+    const fi = document.getElementById('file-input');
+    const errEl = document.getElementById('upload-err');
+    const btn = document.getElementById('btn-enviar');
+    if (!fi.files || !fi.files[0]) {
+        errEl.textContent = 'Selecione um arquivo antes de enviar.';
+        errEl.style.display = 'block';
+        return;
+    }
+    const fd = new FormData();
+    fd.append('comprovante', fi.files[0]);
+    fd.append('order_number', orderNumber);
+    btn.disabled = true;
+    btn.textContent = 'Enviando...';
+    try {
+        const r = await fetch('/api/enviar-comprovante.php', { method:'POST', body:fd });
+        const d = await r.json();
+        if (d.success) {
+            fecharModal();
+            alert('Comprovante enviado com sucesso! Em breve seu pedido será liberado.');
+        } else {
+            errEl.textContent = d.error || 'Erro ao enviar. Tente novamente.';
+            errEl.style.display = 'block';
+        }
+    } catch(e) {
+        errEl.textContent = 'Erro de conexão. Tente novamente.';
+        errEl.style.display = 'block';
+    }
+    btn.disabled = false;
+    btn.textContent = 'Enviar comprovante';
+}
+
+// ── Init ──────────────────────────────────────────────────────────
+document.addEventListener('DOMContentLoaded', loadData);
+</script>
+</body>
+</html>
